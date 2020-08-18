@@ -1,11 +1,11 @@
 import React from 'react';
-import {BrowserRouter} from'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import styled from 'styled-components';
 import GlobalStyle from './styles/global'
 // import Main from './pages/Main/index'
-import Routes from'./routes/index'
-import Routesempresa from'./routes/empresa'
+import Routes from './routes/index'
 // import Routesentrega from'./routes/entrega'
+import SideProvider from './store/index'
 const Title = styled.h1` 
  color: red;
  font-size: 32px;
@@ -13,17 +13,18 @@ const Title = styled.h1`
 `;
 
 const App = () => (
-   
+
 
   <>
- <GlobalStyle /> 
-  <BrowserRouter>
-     <Routes />
-     <Routesempresa />
+    <GlobalStyle />
+    <SideProvider>
+      <BrowserRouter>
+        <Routes />
 
-     </BrowserRouter>
 
-</>
+      </BrowserRouter>
+    </SideProvider>
+  </>
 
 
 )
