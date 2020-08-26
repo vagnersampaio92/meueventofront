@@ -14,7 +14,8 @@ width: 100%;
 height:80vh;
 background: white;
 a{
-        color: #FF522C !important
+        color: #FF522C !important;
+        cursor: pointer;
     }
 `;
 
@@ -23,6 +24,7 @@ export const Buttonnew = styled.div`
     background:#FF522C;
     color: white;
     text-align:center;
+    cursor: pointer;
     border-radius: 10px;
     padding:2px 0 2px 0;
 `;

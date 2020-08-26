@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
 import { Container, Img, Card, Card2, Buttonnew } from './style.js';
 import logo from '../../assets/logo.png'
 import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
+
 import api from '../../services/api'
-import { Link, withRouter } from "react-router-dom";
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
 
 
 export default class Login extends Component {

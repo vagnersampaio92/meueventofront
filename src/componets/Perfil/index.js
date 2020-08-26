@@ -20,18 +20,20 @@ const MainPerfil = () => {
      
       
     </Divide>
-    <Titulo>
-      Dados de perfil
-    </Titulo>
+    
       {perfilOption==1&&
         <Containerexterno>
+          <Titulo>
+      Dados de perfil
+    </Titulo>
        <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10,  }} label="Nome completo" />
        <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10  }} label="Email" />
        <Dividenovo>
-       <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width:'50%' }} label="Seu estado" />
-       <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width:'50%', marginLeft:50 }} label="Sua cidade" />
+       {/* <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width:'50%' }} label="Seu estado" /> */}
+       <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10,width:'45%'  }} label="Telefone" />
+       <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width:'50%' }} label="Sua cidade" />
        </Dividenovo>
-       <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10,width:'45%'  }} label="Email" />
+       {/* <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10,width:'45%'  }} label="Email" /> */}
        <AlinhaBotao>
        <Buttonnew   onClick={() => this.buscar()}>Salvar perfil</Buttonnew >
        </AlinhaBotao>
@@ -39,10 +41,27 @@ const MainPerfil = () => {
         </Containerexterno>
       }
       {perfilOption==2&&
-        <>
-        <p>vitrine</p>
+        <Containerexterno>
+        <Dividenovo>
+        <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width:'50%' }} label="Seu estado" />
+        <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width:'50%', marginLeft:50 }} label="Sua cidade" />
+        </Dividenovo>
+        <Dividenovo>
+        <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width:'50%' }} label="Seu estado" />
+        <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width:'50%', marginLeft:50 }} label="Sua cidade" />
+        </Dividenovo>
+        <Dividenovo>
+        <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width:'50%' }} label="Seu estado" />
+        <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width:'50%', marginLeft:50 }} label="Sua cidade" />
+        </Dividenovo>
+     
+        <p>Descreva seu serviço</p>
+        <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10  }} label="Email" />
+        <AlinhaBotao>
+        <Buttonnew   onClick={() => this.buscar()}>Salvar vitrine</Buttonnew >
+        </AlinhaBotao>
         
-        </>
+         </Containerexterno>
       }
   </Container>
      )

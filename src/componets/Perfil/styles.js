@@ -5,7 +5,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  p{
+    color: rgba(102, 102, 102, 0.6);
+    font-weight: 600;
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  }
 `;
 export const Divide = styled.div`
   display: flex;
@@ -72,6 +76,7 @@ export const Menu = styled.div`
   text-align: center;
   color: #666666;
   margin-top:20px;
+  cursor: pointer;
 `;
 export const Menu2 = styled.div`
   text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25) ; 
@@ -85,4 +90,5 @@ export const Menu2 = styled.div`
   text-align: center;
   color: #666666;
   margin-top:20px;
+  cursor: pointer;
 `;
