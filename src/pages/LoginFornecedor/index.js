@@ -58,7 +58,7 @@ export default class Login extends Component {
         );
     }
     async  buscar() {
-        console.log()
+       
 
 
         this.setState(this.baseState)
@@ -70,19 +70,19 @@ export default class Login extends Component {
         data.email = (this.state.email)
         data.password = (this.state.Password)
 
-        console.log(data)
+        // console.log(data)
 
         try {
             const response = await api.post('loginapp', data)
-          console.log(response)
+        //   console.log(response)
             if (response.data.token) {
                 const a = response.data.token
                 const id = response.data.usuario.id
                 sessionStorage.setItem('tokenres', a);
-                sessionStorage.setItem('restauranteid', id);
+                sessionStorage.setItem('fornecedorid', id);
                 // localStorage.setItem('token',response.data.user.token)
                 const b = sessionStorage.getItem('tokenres')
-                console.log(b)
+                // console.log(b)
                 this.props.history.push("/fornecedor");
             } else {
 

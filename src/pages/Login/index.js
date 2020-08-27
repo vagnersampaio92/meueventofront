@@ -58,7 +58,7 @@ export default class Login extends Component {
         );
     }
     async  buscar() {
-        console.log()
+     
 
 
         this.setState(this.baseState)
@@ -72,7 +72,7 @@ export default class Login extends Component {
 
 
 
-        console.log(data)
+        // console.log(data)
 
         try {
             const response = await api.post('loginadmin', data)
@@ -82,7 +82,7 @@ export default class Login extends Component {
                 sessionStorage.setItem('token', a);
                 // localStorage.setItem('token',response.data.user.token)
                 const b = sessionStorage.getItem('token')
-                console.log(b)
+                // console.log(b)
                 this.props.history.push("/admin");
             } else {
 

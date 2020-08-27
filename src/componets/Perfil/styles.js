@@ -17,6 +17,17 @@ export const Divide = styled.div`
   justify-content: space-around;
 
 `;
+export const Img = styled.img`
+    width: 100%;
+     max-width: 150px;
+     height: auto;
+     margin-bottom:20px;
+      max-height: 150px;
+      border-radius: 50%;
+      border:1px solid #FF522C;
+     
+`;
+
 export const Dividenovo = styled.div`
   display: flex;
   width:100%;
