@@ -32,9 +32,6 @@ const MainPerfil = () => {
     const id = sessionStorage.getItem('fornecedorid')
     const resposta = await api.get('listavitrine/' + id)
     await SetDados(resposta.data)
-
-
-
   }
 
 
@@ -79,10 +76,7 @@ const MainPerfil = () => {
             <AlinhaBotao>
               <Buttonnew onClick={() => this.buscar()}>Salvar perfil</Buttonnew >
             </AlinhaBotao>
-
           </Containerexterno>
-
-
         }
         </>
       }

@@ -26,7 +26,13 @@ export default class Login extends Component {
         super();
 
         this.state = {
+            name: '',
+            email: '',
+            phone: '',
+            password: '',
+            cidade: '',
             status: '',
+            confirmpassword: '',
             flag: 0
 
 
@@ -47,21 +53,23 @@ export default class Login extends Component {
                         <Alinatitulo>
                             <p>Prossiga com seu cadastro</p>
                         </Alinatitulo>
-                        <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width: '100%' }} label="Nome completo" />
+                        <TextField id="standard-basic" onChange={e => { this.setState({ name: e.target.value }) }} style={{ marginBottom: 10, width: '100%' }} label="Nome completo" />
                         <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width: '100%' }} label="Email" />
+                        <TextField id="standard-basic" onChange={e => { this.setState({ cidade: e.target.value }) }} style={{ marginBottom: 10, width: '100%' }} label="Sua cidade" />
+
+                        {/* <Dividenovo>
+                            <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width: '50%' }} label="Seu estado" />
+                            <TextField id="standard-basic" onChange={e => { this.setState({ cidade: e.target.value }) }} style={{ marginBottom: 10, width: '50%', marginLeft: 50 }} label="Sua cidade" />
+                        </Dividenovo> */}
                         <Dividenovo>
-                            {/* <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width: '50%' }} label="Seu estado" /> */}
-                            <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width: '50%', marginLeft: 50 }} label="Sua cidade" />
-                        </Dividenovo>
-                        <Dividenovo>
-                            <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width: '50%' }} label="Senha" />
-                            <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width: '50%', marginLeft: 50 }} label="Confirmar Senha" />
+                            <TextField type="password" id="standard-basic" onChange={e => { this.setState({ password: e.target.value }) }} style={{ marginBottom: 10, width: '50%' }} label="Senha" />
+                            <TextField type="password" id="standard-basic" onChange={e => { this.setState({ confirmpassword: e.target.value }) }} style={{ marginBottom: 10, width: '50%', marginLeft: 50 }} label="Confirmar Senha" />
                         </Dividenovo>
 
                         <Ajustaaltura>
                             <FormControlLabel control={<Checkbox name="checkedG" />} label="Aceito os termos de uso do site" />
                             <AlinhaBotao>
-                                <Buttonnew onClick={() => this.buscar()}>Cadastrar</Buttonnew >
+                                <Buttonnew onClick={() => this.cadastrar()}>Cadastrar</Buttonnew >
                             </AlinhaBotao>
                         </Ajustaaltura>
 
@@ -77,7 +85,23 @@ export default class Login extends Component {
         );
     };
 
+    async cadastrar() {
+        if (this.state.password == this.state.confirmpassword) {
+            let data = {}
+            data.name = this.state.name
+            data.email = this.state.email
+            data.phone = this.state.phone
+            data.password = this.state.password
+            data.cidade = this.state.cidade
+            data.tipo = 2
+            const response = await api.post('register', data)
 
+            let vitrine={}
+            vitrine.usuarioid=response.data.id
+            const responsevitrine = await api.post('registervitrine', vitrine)
+            console.log(responsevitrine)
+        }
+    }
 }
 
 
