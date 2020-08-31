@@ -10,6 +10,8 @@ export const Container = styled.div`
     font-weight: 600;
     text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
   }
+  width:100%;
+
 `;
 export const Divide = styled.div`
   display: flex;
@@ -27,6 +29,16 @@ export const Img = styled.img`
       border:1px solid #FF522C;
      
 `;
+export const Imgslide = styled.img`
+    width: 100%;
+     
+     height: auto;
+     margin-bottom:20px;
+      max-height: 300px;
+      border:1px solid #FF522C;
+      border-radius: 10px;
+`;
+
 
 export const Dividenovo = styled.div`
   display: flex;
@@ -39,12 +51,32 @@ export const Containerexterno = styled.div`
   display: flex;
   width:50%;
   flex-direction: column;
+  p{
+    margin-top:15px;
+    margin-bottom:15px;
+  }
 `;
 export const AlinhaBotao = styled.div`
   display: flex;
   text-align: center;
   justify-content: center;
   margin-top: 100px;
+
+`;
+
+export const Alinhacont = styled.div`
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color:#FF522C;
+  margin-top: 5px;
+
+`;
+export const AlinhaBotaoExcluir = styled.div`
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 5px;
 
 `;
 

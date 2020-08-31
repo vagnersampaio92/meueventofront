@@ -12,6 +12,7 @@ height: 100% !important;
 width: 20%;
 border-right: 1px solid #FF522C;
 padding-top:20px;
+position: fixed;
 
 `;
 

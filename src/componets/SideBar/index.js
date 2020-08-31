@@ -26,7 +26,7 @@ const SideBar= ({Escolha})=>{
             <Img src={logo} />
             <Line onClick={() => hendleMenu(1)}>Meu Perfil</Line>
             
-            <Line onClick={() => hendleMenu(2)}>Meus eventos</Line>
+            {/* <Line onClick={() => hendleMenu(2)}>Meus eventos</Line> */}
             <Line onClick={() => hendleMenu(3)}>Meus Pacotes</Line>
             <Sair onClick={() => sair()}>Sair</Sair>
             
