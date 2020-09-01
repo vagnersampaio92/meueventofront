@@ -6,6 +6,8 @@ import Input from '@material-ui/core/Input';
 import Carousel from 'react-material-ui-carousel'
 import { Paper } from '@material-ui/core'
 import { red } from "@material-ui/core/colors";
+import { uniqueId } from "lodash";
+import filesize from "filesize";
 
 
 // Carousel-buttonWrapper-62 Carousel-fullHeightHoverWrapper-63 Carousel-next-68
@@ -18,6 +20,7 @@ const MainPerfil = () => {
   const [perfilOption, SetperfilOption] = useState(
     1
   );
+  
   const [vitrineOption, SetvitrineOption] = useState(
     1
   );
@@ -49,9 +52,30 @@ const MainPerfil = () => {
   useEffect(() => {
     if (dados.length > 0) {
       SetvVtrine({ ...Vitrine, ["fotos"]: dados[0].fotos, ["videos"]: dados[0].videos })
-     
+
     }
   }, [dados]);
+
+  async function sendPictureToserve(files) {
+
+    // this.file = this.$refs.file.files[0];
+    console.log(dados[0].id)
+    const formData = new FormData();
+    formData.append(
+      'file', files[0]
+      );
+
+     
+    const resposta = await api.post('posts', formData)
+  
+    let v ={}
+    v.vitrine_id=dados[0].id
+    v.arrayfotos=[{}]
+    v.arrayfotos[0].fotos=resposta.data
+    console.log(v)
+    const respostafotos = await api.post('registerfotos', v)
+    console.log(respostafotos.data)
+  };
 
   const carrega = async () => {
     const id = sessionStorage.getItem('fornecedorid')
@@ -59,9 +83,9 @@ const MainPerfil = () => {
     await SetDados(resposta.data)
   }
 
-  const handleUploadFile = (e: any) => {
-    setCardFile(e.target.files[0]);
-  }
+  // const handleUploadFile = (e: any) => {
+  //   setCardFile(e.target.files[0]);
+  // }
 
   console.log(Vitrine)
   return (
@@ -124,7 +148,7 @@ const MainPerfil = () => {
                 {
                   Vitrine.fotos.map((foto) => (
                     <>
-                      <Imgslide style={{ marginTop: 50 }} src={foto.fotos} onChange={handleUploadFile}></Imgslide >
+                      <Imgslide style={{ marginTop: 50 }} src={foto.fotos} ></Imgslide >
                       <AlinhaBotaoExcluir>
                         <Buttonnew onClick={() => this.buscar()}>Excluir foto</Buttonnew >
                       </AlinhaBotaoExcluir>
@@ -136,16 +160,18 @@ const MainPerfil = () => {
                 {Vitrine.fotos.length} Fotos
         </Alinhacont>
 
-              <Input type="file"  ></Input>
+              <Input type="file" accept="image/*" onChange={e => { sendPictureToserve(e.target.files) }}></Input>
+              {/* <Input type="file" onChange={e => { Setfile({...file, ["file"]:e.target.value}) }}></Input> */}
             </div>
           }
+
           {vitrineOption == 2 &&
             <div style={{ width: '100%' }}>
               <Carousel >
                 {
                   Vitrine.videos.map((video) => (
                     <>
-                      <iframe  tyle={{ marginTop: 50 }} src={video.videos} onChange={handleUploadFile}></iframe  >
+                      <iframe tyle={{ marginTop: 50 }} src={video.videos} ></iframe  >
                       <AlinhaBotaoExcluir>
                         <Buttonnew onClick={() => this.buscar()}>Excluir video</Buttonnew >
                       </AlinhaBotaoExcluir>
@@ -157,7 +183,11 @@ const MainPerfil = () => {
                 {Vitrine.videos.length} videos
        </Alinhacont>
 
-              <Input type="file"  ></Input>
+              {/* <Input type="file"
+                name="file"
+                id="file"
+                onChange={() => { sendPictureToserve() }}
+                ref="file"  ></Input> */}
             </div>
           }
 
