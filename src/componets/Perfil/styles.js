@@ -86,6 +86,7 @@ export const Buttonnew = styled.div`
     background:#FF522C;
     color: white;
     text-align:center;
+    cursor: pointer;
     border-radius: 10px;
     padding:2px 0 2px 0;
     letter-spacing: 0.16px;

@@ -85,10 +85,17 @@ const MainPerfil = () => {
     const resposta = await api.get('listavitrine/' + id)
     await SetDados(resposta.data)
   }
+  const SalvaPerfil = async () => {
+    let data={}
+    data.id=perfil.id
+    data.dados={}
+    data.dados=perfil
+    const resposta = await api.put('editausuario', data)
+    console.log(resposta)
+ 
+  }
 
-  // const handleUploadFile = (e: any) => {
-  //   setCardFile(e.target.files[0]);
-  // }
+
 
   console.log(Vitrine)
   return (
@@ -129,7 +136,7 @@ const MainPerfil = () => {
             </Dividenovo>
             {/* <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10,width:'45%'  }} label="Email" /> */}
             <AlinhaBotao>
-              <Buttonnew onClick={() => this.buscar()}>Salvar perfil</Buttonnew >
+              <Buttonnew onClick={() => {SalvaPerfil()}}>Salvar perfil</Buttonnew >
             </AlinhaBotao>
           </Containerexterno>
         }
