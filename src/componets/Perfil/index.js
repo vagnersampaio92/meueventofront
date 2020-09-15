@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, } from "react";
 import TextField from '@material-ui/core/TextField'
-import { Container, Menu, Divide, Titulo, Buttonnew, Dividenovo, Containerexterno, AlinhaBotao, Menu2, Img, Imgslide, AlinhaBotaoExcluir, Alinhacont } from "./styles";
+import { Container, Menu, Divide, Titulo, Buttonnew, Buttonnew2, Dividenovo, Containerexterno, AlinhaBotao, Menu2, Img, Imgslide, AlinhaBotaoExcluir, Alinhacont } from "./styles";
 import api from '../../services/api'
 import Input from '@material-ui/core/Input';
 import Carousel from 'react-material-ui-carousel'
@@ -94,6 +94,13 @@ const MainPerfil = () => {
     console.log(resposta)
  
   }
+  const deletafoto = async (id) => {
+    
+    const resposta = await api.delete('excluifotos/'+id)
+    // const remove = Vitrine.fotos.filter(vi => vi.id != id)
+    // SetvVtrine({...Vitrine, ["fotos"]:[... remove]} )
+    window.location.reload();
+  }
 
 
 
@@ -149,14 +156,15 @@ const MainPerfil = () => {
           </Dividenovo>
           {subescolha == 1 &&
             <div style={{ width: '100%' }}>
-              <Carousel timings="250ms ease-in">
+              <Carousel animation="slide" autoPlay="false" timeout="0">
                 {
                   Vitrine.fotos.map((foto) => (
                     <>
                       <Imgslide style={{ marginTop: 50 }} src={foto.fotos} ></Imgslide >
                       <AlinhaBotaoExcluir>
-                        
-                        <Buttonnew onClick={() => this.buscar()}>Excluir foto</Buttonnew >
+                      <input name="file" type="file" accept="image/*" id="file" onChange={e => { sendPictureToserve(e.target.files) }}></input>
+                       <label for="file" className="button">Adicionar foto</label>
+                        <Buttonnew2 onClick={() => deletafoto(foto.id)}>Excluir foto</Buttonnew2>
                       </AlinhaBotaoExcluir>
                     </>
                   ))
@@ -166,15 +174,14 @@ const MainPerfil = () => {
                 {Vitrine.fotos.length} Fotos
         </Alinhacont>
 
-              <input name="file" type="file" accept="image/*" id="file" onChange={e => { sendPictureToserve(e.target.files) }}></input>
-              <label for="file" className="button">Adicionar foto</label>
+             
               {/* <Input type="file" onChange={e => { Setfile({...file, ["file"]:e.target.value}) }}></Input> */}
             </div>
           }
 
           {subescolha == 2 &&
             <div style={{ width: '100%' }}>
-              <Carousel >
+              <Carousel  animation="slide" autoPlay="false" timeout="0">
                 {
                   Vitrine.videos.map((video) => (
                     <>

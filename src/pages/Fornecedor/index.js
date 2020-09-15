@@ -15,6 +15,9 @@ const Main = ()=> {
             {escolha==1 &&
             <Perfil></Perfil>
             } 
+            {escolha==2 &&
+            <Perfil></Perfil>
+            } 
            
         
             </Container>

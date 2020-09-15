@@ -74,7 +74,7 @@ export const Containerexterno = styled.div`
     text-align:center;
     cursor: pointer;
     border-radius: 10px;
-    padding:2px 65px 2px 65px;
+    padding:2px 0 2px 0;
     letter-spacing: 0.16px;
     color: #FFFFFF;
 
@@ -112,6 +112,22 @@ export const AlinhaBotaoExcluir = styled.div`
   justify-content: center;
   margin-top: 5px;
 
+`;
+
+export const Buttonnew2 = styled.div`
+  width:200px;
+    /* background:#FF522C; */
+    color: white;
+    text-align:center;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #FF522C;
+    margin-left:10px;
+    padding:2px 0 2px 0;
+    letter-spacing: 0.16px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FF522C;
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 `;
 
 
