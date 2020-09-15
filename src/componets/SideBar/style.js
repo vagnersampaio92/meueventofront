@@ -13,6 +13,12 @@ width: 20%;
 border-right: 1px solid #FF522C;
 padding-top:20px;
 position: fixed;
+.active{
+        border-bottom:1px solid #e90000 !important;
+    }
+    .component{
+      border-bottom:1px solid #4d2682 !important;
+    }
 
 `;
 
@@ -24,6 +30,16 @@ export const Img = styled.img`
      margin-bottom: 30px;
   
 `;
+export const Span = styled.span`
+svg{
+   width:15px;
+   height:15px;
+   margin-left:50%;
+   background: #FF522C;
+   color: white;
+   border-radius:50%;
+}
+`;
 
 export const Line = styled.div`
    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
@@ -34,7 +50,7 @@ export const Line = styled.div`
    font-weight: 600;
    cursor: pointer;
    font-feature-settings: 'pnum' on, 'lnum' on;
-  
+ 
 `;
 export const Sair = styled.div`
 position: absolute;

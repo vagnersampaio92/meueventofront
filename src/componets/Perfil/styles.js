@@ -28,6 +28,7 @@ export const Img = styled.img`
       border-radius: 50%;
       border:1px solid #FF522C;
      
+     
 `;
 export const Imgslide = styled.img`
     width: 100%;
@@ -43,7 +44,9 @@ export const Imgslide = styled.img`
 export const Dividenovo = styled.div`
   display: flex;
   width:100%;
-
+  :first-child{
+    margin-top:30px !important;
+    }
 
   justify-content: space-around;
 `;
@@ -54,6 +57,37 @@ export const Containerexterno = styled.div`
   p{
     margin-top:15px;
     margin-bottom:15px;
+  }
+  input[type="file"] {
+   border:0;
+   clip:rect(0,0,0,0);
+   height:1px;
+   overflow:hidden;
+   position:absolute;
+   word-spacing:nowrap;
+
+  }
+ .button{
+     width:200px !important;
+    background:#FF522C;
+    color: white;
+    text-align:center;
+    cursor: pointer;
+    border-radius: 10px;
+    padding:2px 65px 2px 65px;
+    letter-spacing: 0.16px;
+    color: #FFFFFF;
+
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+ }
+  #file{
+    
+    border:0;
+   clip:rect(0,0,0,0);
+   height:1px;
+   overflow:hidden;
+   position:absolute;
+   word-spacing:nowrap;
   }
 `;
 export const AlinhaBotao = styled.div`

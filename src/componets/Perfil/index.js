@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext, } from "react";
 import TextField from '@material-ui/core/TextField'
 import { Container, Menu, Divide, Titulo, Buttonnew, Dividenovo, Containerexterno, AlinhaBotao, Menu2, Img, Imgslide, AlinhaBotaoExcluir, Alinhacont } from "./styles";
 import api from '../../services/api'
@@ -8,7 +8,7 @@ import { Paper } from '@material-ui/core'
 import { red } from "@material-ui/core/colors";
 import { uniqueId } from "lodash";
 import filesize from "filesize";
-
+import {SideBarContext} from '../../store/index'
 
 // Carousel-buttonWrapper-62 Carousel-fullHeightHoverWrapper-63 Carousel-next-68
 
@@ -20,10 +20,8 @@ const MainPerfil = () => {
   const [perfilOption, SetperfilOption] = useState(
     1
   );
-  
-  const [vitrineOption, SetvitrineOption] = useState(
-    1
-  );
+  const {subescolha, SetsubEscolha} = useContext( SideBarContext )
+ 
   const [dados, SetDados] = useState([]);
 
   const [Vitrine, SetvVtrine] = useState({
@@ -78,6 +76,8 @@ const MainPerfil = () => {
     console.log(v)
     const respostafotos = await api.post('registerfotos', v)
     console.log(respostafotos.data)
+    carrega()
+    window.location.reload();
   };
 
   const carrega = async () => {
@@ -145,21 +145,17 @@ const MainPerfil = () => {
       {perfilOption == 2 &&
         <Containerexterno>
           <Dividenovo>
-            {
-              vitrineOption == 1 ? <Menu onClick={() => { SetvitrineOption(1) }}>Fotos</Menu> : <Menu2 onClick={() => { SetvitrineOption(1) }}>Fotos</Menu2>
-            }
-            {
-              vitrineOption == 2 ? <Menu onClick={() => { SetvitrineOption(2) }}>Videos</Menu> : <Menu2 onClick={() => { SetvitrineOption(2) }}>Videos</Menu2>
-            }
+          
           </Dividenovo>
-          {vitrineOption == 1 &&
+          {subescolha == 1 &&
             <div style={{ width: '100%' }}>
-              <Carousel >
+              <Carousel timings="250ms ease-in">
                 {
                   Vitrine.fotos.map((foto) => (
                     <>
                       <Imgslide style={{ marginTop: 50 }} src={foto.fotos} ></Imgslide >
                       <AlinhaBotaoExcluir>
+                        
                         <Buttonnew onClick={() => this.buscar()}>Excluir foto</Buttonnew >
                       </AlinhaBotaoExcluir>
                     </>
@@ -170,12 +166,13 @@ const MainPerfil = () => {
                 {Vitrine.fotos.length} Fotos
         </Alinhacont>
 
-              <Input type="file" accept="image/*" onChange={e => { sendPictureToserve(e.target.files) }}></Input>
+              <input name="file" type="file" accept="image/*" id="file" onChange={e => { sendPictureToserve(e.target.files) }}></input>
+              <label for="file" className="button">Adicionar foto</label>
               {/* <Input type="file" onChange={e => { Setfile({...file, ["file"]:e.target.value}) }}></Input> */}
             </div>
           }
 
-          {vitrineOption == 2 &&
+          {subescolha == 2 &&
             <div style={{ width: '100%' }}>
               <Carousel >
                 {

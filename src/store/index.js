@@ -8,6 +8,9 @@ const SideBarProvider = ({ children }) => {
     let [escolha, SetEscolha] = useState(
         1
          )
+         let [subescolha, SetsubEscolha] = useState(
+            1
+             )
 
     const hendleMenu = Escolha => {
         // escolha=JSON.parse(JSON.stringify(escolha))
@@ -15,7 +18,7 @@ const SideBarProvider = ({ children }) => {
     }
 
     return(
-        <SideBarContext.Provider value={{escolha,hendleMenu}}>
+        <SideBarContext.Provider value={{escolha,hendleMenu,subescolha, SetsubEscolha}}>
         { children }
     </SideBarContext.Provider>
     )
