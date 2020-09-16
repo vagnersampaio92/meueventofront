@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import { Container, Img, Card, Card2 } from './style.js';
+import { Container, Img, Card, Card2, Buttonnew } from './style.js';
 import logo from '../../assets/logo.png'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
@@ -28,31 +28,55 @@ export default class Login extends Component {
 
 
         return (
+            // <div style={{ width: '100%' }}>
+
+
+            //     <Container >
+            //         <Card>
+            //             <header>
+            //                 <Img src={logo} />
+            //             </header>
+            //             <Card2>
+            //                 <div style={{ background:"red", borderRadius:"7px" }}>
+            //                     {this.state.erro == true &&
+            //                         <p style={{ fontSize: 10, color: "white" }}>Email ou senha incorretos</p>
+            //                     }
+            //                 </div>
+
+            //                 <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} label="Email" />
+
+            //                 <TextField id="standard-basic" onChange={e => { this.setState({ Password: e.target.value }) }} label="Senha" style={{ marginBottom: 30 }} type="password" />
+
+            //                 <Button variant="outlined" style={{ marginBottom: 50, borderColor: "#fa8e40" }} onClick={() => this.buscar()}>Login admin</Button>
+            //             </Card2>
+            //         </Card>
+            //     </ Container>
+            // </div>
             <div style={{ width: '100%' }}>
 
 
-                <Container >
-                    <Card>
-                        <header>
-                            <Img src={logo} />
-                        </header>
-                        <Card2>
-                            <div style={{ background:"red", borderRadius:"7px" }}>
-                                {this.state.erro == true &&
-                                    <p style={{ fontSize: 10, color: "white" }}>Email ou senha incorretos</p>
-                                }
-                            </div>
+            <Container >
+                
+                    <Img src={logo} />
+             
+                <Card>
 
-                            <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} label="Email" />
+                    <Card2> <div style={{ background: "red", borderRadius: "7px" }}>
+                        {this.state.erro == true &&
+                            <p style={{ fontSize: 10, color: "white" }}>Email ou senha incorretos</p>
+                        }
+                    </div>
 
-                            <TextField id="standard-basic" onChange={e => { this.setState({ Password: e.target.value }) }} label="Senha" style={{ marginBottom: 30 }} type="password" />
+                    <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} label="Email" />
 
-                            <Button variant="outlined" style={{ marginBottom: 50, borderColor: "#fa8e40" }} onClick={() => this.buscar()}>Login admin</Button>
-                        </Card2>
-                    </Card>
-                </ Container>
-            </div>
+                <TextField id="standard-basic" onChange={e => { this.setState({ Password: e.target.value }) }} label="Senha" style={{ marginBottom: 30 }} type="password" />
+                        <Buttonnew  variant="outlined" style={{ marginBottom: 5, borderColor: "#fa8e40", marginTop: 10 }} onClick={() => this.buscar()}>Confirmar</Buttonnew >
+                    </Card2>
 
+                </Card>
+                
+            </ Container>
+        </div>
 
 
         );

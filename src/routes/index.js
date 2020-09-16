@@ -16,16 +16,6 @@ import FornecedorCadastro from '../pages/FornecedorCadastro'
 import loginempresa from '../pages/LoginFornecedor/index'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
-    <Route
-      {...rest}
-      render={props =>
-        isAuthenticated() ? (
-          <Component {...props} />
-        ) : (
-          <Redirect to={{ pathname: "/", state: { from: props.location } }} />
-        )
-      }
-    />,
 
     <Route
     {...rest}
@@ -38,7 +28,20 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     }
   />
   );
+  const PrivateRouteadm = ({ component: Component, ...rest }) => (
+    <Route
+      {...rest}
+      render={props =>
+        isAuthenticated() ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+        )
+      }
+    />
 
+   
+  );
 
 
 
@@ -48,7 +51,7 @@ const Routes = () =>(
         <Route path="/login" component={Login} />
        
         {/* <Route  path="/loginempresa" component={Loginempresa} /> */}
-        <PrivateRoute  path="/admin" component={Adm} />
+        <PrivateRouteadm  path="/admin" component={Adm} />
         {/* <PrivateRoute  path="/imobiliaria" component={Imobiliaria} />
         <PrivateRoute  path="/user" component={User} /> */}
         <Route  path="/loginfornecedor" component={loginempresa} />

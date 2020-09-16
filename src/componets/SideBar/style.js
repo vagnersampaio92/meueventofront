@@ -12,12 +12,12 @@ height: 100% !important;
 width: 20%;
 border-right: 1px solid #FF522C;
 padding-top:20px;
-position: fixed;
+
 .active{
         border-bottom:1px solid #e90000 !important;
     }
     .component{
-      border-bottom:1px solid #4d2682 !important;
+      
     }
 
 `;
