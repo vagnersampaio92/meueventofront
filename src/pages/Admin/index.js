@@ -5,6 +5,9 @@ import SideBar from '../../componets/SideBar'
 import Homeadm from '../../componets/Homeadm/index'
 import Usuario from '../../componets/Usuario/index'
 import Fornecedor from '../../componets/Fornecedor/index'
+import Categoria from '../../componets/Categoria/index'
+import Pergunta from '../../componets/Pergunta/index'
+
 const Main = ()=> {
     const {  adm, Setadm} = useContext( SideBarContext )
     const {  escolhaadm, SetEscolhaadm} = useContext( SideBarContext )
@@ -20,7 +23,7 @@ const Main = ()=> {
          <SideBar ></SideBar>
          {escolhaadm == 1 && <><Homeadm /></>}
          {escolhaadm == 2 && <><Usuario /></>}
-         {escolhaadm == 3 && <><Usuario /></>}
+         {escolhaadm == 3 && <><Categoria /></>}
          {escolhaadm == 4 && <><Usuario /></>}
          {escolhaadm == 5 && <><Fornecedor /></>}
          </Container>
