@@ -46,12 +46,12 @@ const SideBar = () => {
                         <Sair onClick={() => sair()}>Sair</Sair>
                     </> :
                     <Alinha>
-                        <Line onClick={() => SetEscolhaadm(1)}>Home</Line>
-                        <Line onClick={() => SetEscolhaadm(2)}>Usuários</Line>
-                        <Line onClick={() => SetEscolhaadm(3)}>Categorias</Line>
-                        <Line onClick={() => SetEscolhaadm(4)}>Questionário</Line>
-                        <Line onClick={() => SetEscolhaadm(5)}>Fornecedores</Line>
-                        <Sair onClick={() => sairadm()}>Sair</Sair>
+                        <Line className={(escolhaadm == 1) ? "active" : "component"} onClick={() => SetEscolhaadm(1)}>Home</Line>
+                        <Line className={(escolhaadm == 2) ? "active" : "component"} onClick={() => SetEscolhaadm(2)}>Usuários</Line>
+                        <Line className={(escolhaadm == 3) ? "active" : "component"} onClick={() => SetEscolhaadm(3)}>Categorias</Line>
+                        <Line className={(escolhaadm == 4) ? "active" : "component"} onClick={() => SetEscolhaadm(4)}>Questionário</Line>
+                        <Line  className={(escolhaadm == 5) ? "active" : "component"} onClick={() => SetEscolhaadm(5)}>Fornecedores</Line>
+                        <Sair  onClick={() => sairadm()}>Sair</Sair>
                     </Alinha>
 
                 }

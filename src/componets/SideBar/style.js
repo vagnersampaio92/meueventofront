@@ -10,7 +10,7 @@ flex-direction: column;
 align-items: center;
 
 height: 100% !important;
-width: 20%;
+width: 30%;
 border-right: 1px solid #FF522C;
 padding-top:20px;
 

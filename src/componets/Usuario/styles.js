@@ -6,6 +6,12 @@ padding: 10px 40px;
 width:100%;
 `;
 
+export const Alinha = styled.div`
+width:100%;
+display: flex;
+justify-content:center;
+`;
+
 export const Titulo = styled.div`
 font-style: normal;
 font-weight: 600;

@@ -82,6 +82,12 @@ div{
 }
 
 `;
+export const Alinha = styled.div`
+width:100%;
+display: flex;
+justify-content:center;
+`;
+
 
 export const Busca = styled.div`
 display: flex;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, } from "react";
-import { Container, Titulo, Card, Box, Busca, Boxd } from "./styles";
+import { Container, Titulo, Card, Box, Busca, Boxd, Alinha } from "./styles";
 import TextField from '@material-ui/core/TextField'
 
 const Homeadm = () => {
@@ -44,7 +44,7 @@ const Homeadm = () => {
 
 
                     </Box>
-                </> : <>
+                </> : <Alinha>
                     <Boxd>
                         <p>João Paulo</p>
                         <p>gbrito.one@gmail.com</p>
@@ -56,7 +56,7 @@ const Homeadm = () => {
                         </div>
 
                     </Boxd>
-                </>
+                </Alinha>
 
             }
         </Container>
