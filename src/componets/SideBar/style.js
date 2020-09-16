@@ -24,9 +24,8 @@ padding-top:20px;
 
 
 export const Img = styled.img`
-    width: 80%;
-     
-     height: 10%;
+   width: 60%;
+     height: 3%;
      margin-bottom: 30px;
   
 `;
