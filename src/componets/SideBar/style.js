@@ -8,6 +8,7 @@ export const Container = styled.div`
 display:flex;
 flex-direction: column;
 align-items: center;
+
 height: 100% !important;
 width: 20%;
 border-right: 1px solid #FF522C;
@@ -29,6 +30,13 @@ export const Img = styled.img`
      margin-bottom: 30px;
   
 `;
+export const Alinha = styled.div`
+   width: 60%;
+     height: 3%;
+     margin-bottom: 30px;
+  
+`;
+
 export const Span = styled.span`
 svg{
    width:15px;
@@ -41,8 +49,9 @@ svg{
 `;
 
 export const Line = styled.div`
+
    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-   min-width: 200px;
+   max-width: 200px;
    padding-bottom:3px;
    margin-top:10px;
   color: #666666;

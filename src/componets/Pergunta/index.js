@@ -1,64 +1,77 @@
 import React, { useState, useEffect, useContext, } from "react";
 import { Container, Titulo, Card, Box, Busca, Boxd } from "./styles";
 import TextField from '@material-ui/core/TextField'
+import Select from '@material-ui/core/Select';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
 
 const Homeadm = () => {
     const [detalhe, Setdetalhe] = useState('');
     console.log(detalhe)
+    const [age, setAge] = React.useState('');
+
+    const handleChange = (event) => {
+        setAge(event.target.value);
+    };
     return (
         <Container>
-            {detalhe == '' ?
-                <>
-                    <Titulo>Usuários cadastrados na plataforma</Titulo>
-                    <Busca>
-                        {/* <p>Pesquisa usuário por email</p> */}
-
-                        <TextField id="standard-basic" label="Pesquisa Fornecedor por email" />
-                        <button >Pesquisar</button>
-                    </Busca>
-                    <Box>
-                        <Card>
-                            <p>João Paulo</p>
-                            <button onClick={e => { Setdetalhe('DSD') }}>Ver mais</button>
-                        </Card>
-                        <Card>
-                            <p>João Paulo</p>
-                            <button>Ver mais</button>
-                        </Card>
-                        <Card>
-                            <p>João Paulo</p>
-                            <button>Ver mais</button>
-                        </Card>
-                        <Card>
-                            <p>João Paulo</p>
-                            <button>Ver mais</button>
-                        </Card>
-                        <Card>
-                            <p>João Paulo</p>
-                            <button>Ver mais</button>
-                        </Card>
-                        <Card>
-                            <p>João Paulo</p>
-                            <button>Ver mais</button>
-                        </Card>
+            <Titulo>Cadastrar nova categoria</Titulo>
+            <Busca>
+                <FormControl>
+                    <InputLabel id="demo-simple-select-label">Escolha a categoria</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={age}
+                        onChange={handleChange}
+                    >
+                        <MenuItem value={10}>Buffet</MenuItem>
+                        <MenuItem value={20}>Fotográfo</MenuItem>
+                        <MenuItem value={30}>Salão</MenuItem>
+                    </Select>
+                </FormControl>
+                <button >Carregar</button>
+            </Busca>
 
 
-                    </Box>
-                </> : <>
-                    <Boxd>
-                        <p>João Paulo</p>
-                        <p>gbrito.one@gmail.com</p>
-                        <p>Pelotas</p>
-                        <p>(53) 9 8100-8667</p>
-                        <div>
-                            <button onClick={e => { }}>Deletar</button>
-                            <button onClick={e => { }}>Dar plano</button>
-                        </div>
 
-                    </Boxd>
-                </>
+            {age == '' ? <><div className="texto"><p>Sua lista de perguntas sera carregada assim que você escolher uma categoria</p></div></> : <>
+        <Busca>
+        <TextField id="standard-basic" className="espaco" label="Cadastre uma pergunta" />
+        <button >Cadastrar</button>
+        </Busca>
+                
 
-            }
+                <Box>
+                    <Card>
+                        <p>Quais serviços você não disponibiliza?</p>
+                        <button onClick={e => { }}>Excluir </button>
+                    </Card>
+                    <Card>
+                        <p>Como costuma comparecer aos eventos?</p>
+                        <button>Excluir</button>
+                    </Card>
+                    <Card>
+                        <p>Por onde costuma começar seus serviços?</p>
+                        <button>Excluir</button>
+                    </Card>
+                    <Card>
+                        <p>Como faz para casamentos?</p>
+                        <button>Excluir</button>
+                    </Card>
+                    <Card>
+                        <p>Tem algum pacote especial?</p>
+                        <button>Excluir</button>
+                    </Card>
+                    <Card>
+                        <p>Oferece quais pratos no seu serviço?</p>
+                        <button>Excluir</button>
+                    </Card>
+
+                </Box>
+            </>}
+
         </Container>
     );
 
@@ -67,5 +80,32 @@ const Homeadm = () => {
 
 export default Homeadm;
 
+{/* <TextField id="standard-basic" label="Digite aqui nova categoria" />
 
+<Box>
+<Card>
+    <p>Fotográfo</p>
+    <button onClick={e => {  }}>Excluir </button>
+</Card>
+<Card>
+    <p>Decoração</p>
+    <button>Excluir</button>
+</Card>
+<Card>
+    <p>Cerimonialista</p>
+    <button>Excluir</button>
+</Card>
+<Card>
+    <p>Animador de eventos</p>
+    <button>Excluir</button>
+</Card>
+<Card>
+    <p>Video Maker</p>
+    <button>Excluir</button>
+</Card>
+<Card>
+    <p>Buffet</p>
+    <button>Excluir</button>
+</Card>
 
+</Box> */}

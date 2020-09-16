@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Container, Img, Line, Sair, Span } from './style.js';
+import { Container, Img, Line, Sair, Span, Alinha } from './style.js';
 import logo from '../../assets/logo.png'
 import { SideBarContext } from '../../store/index'
 import { useHistory } from "react-router"
@@ -45,14 +45,14 @@ const SideBar = () => {
                         <Line onClick={() => hendleMenu(3)}>Meus Pacotes</Line>
                         <Sair onClick={() => sair()}>Sair</Sair>
                     </> :
-                    <>
+                    <Alinha>
                         <Line onClick={() => SetEscolhaadm(1)}>Home</Line>
                         <Line onClick={() => SetEscolhaadm(2)}>Usuários</Line>
                         <Line onClick={() => SetEscolhaadm(3)}>Categorias</Line>
                         <Line onClick={() => SetEscolhaadm(4)}>Questionário</Line>
                         <Line onClick={() => SetEscolhaadm(5)}>Fornecedores</Line>
                         <Sair onClick={() => sairadm()}>Sair</Sair>
-                    </>
+                    </Alinha>
 
                 }
 

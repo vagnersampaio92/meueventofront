@@ -4,6 +4,35 @@ export const Container = styled.div`
 margin-top:30px;
 padding: 10px 40px;
 width:100%;
+.espaco{
+    margin-top:40px;
+    margin-bottom:60px;
+}
+.texto{
+
+    display: flex;
+    margin-top:250px;
+    justify-content:center;
+    p{
+        /* margin-top:20%; */
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+/* or 150% */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.16px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #666666;
+
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+}
+
 `;
 
 export const Titulo = styled.div`
@@ -15,6 +44,7 @@ margin-bottom:40px;
 /* or 100% */
 
 display: flex;
+flex-direction: column;
 align-items: center;
 letter-spacing: 0.16px;
 font-feature-settings: 'pnum' on, 'lnum' on;
@@ -87,6 +117,7 @@ export const Busca = styled.div`
 display: flex;
 align-items:center;
 margin-left:30px;
+justify-content: center;
 .MuiInputBase-root{
 
     width:300px;
@@ -109,6 +140,7 @@ button{
 
 export const Card = styled.div`
 margin-top:10px;
+width:100%;
 display: flex;
 justify-content: space-between;
 border-bottom: 2px solid rgba(0, 0, 0, 0.15);

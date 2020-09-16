@@ -24,7 +24,7 @@ const Main = ()=> {
          {escolhaadm == 1 && <><Homeadm /></>}
          {escolhaadm == 2 && <><Usuario /></>}
          {escolhaadm == 3 && <><Categoria /></>}
-         {escolhaadm == 4 && <><Usuario /></>}
+         {escolhaadm == 4 && <><Pergunta /></>}
          {escolhaadm == 5 && <><Fornecedor /></>}
          </Container>
 
