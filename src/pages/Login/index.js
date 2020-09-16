@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component} from 'react'
 import styled from 'styled-components'
-
+import {SideBarContext} from '../../store/index'
 import { Container, Img, Card, Card2, Buttonnew } from './style.js';
 import logo from '../../assets/logo.png'
 import TextField from '@material-ui/core/TextField'
@@ -12,7 +12,7 @@ import { Link, withRouter } from "react-router-dom";
 
 export default class Login extends Component {
 
-
+    
     constructor() {
         super();
 
@@ -25,7 +25,7 @@ export default class Login extends Component {
     }
 
     render() {
-
+        
 
         return (
             // <div style={{ width: '100%' }}>
@@ -107,6 +107,7 @@ export default class Login extends Component {
                 // localStorage.setItem('token',response.data.user.token)
                 const b = sessionStorage.getItem('token')
                 // console.log(b)
+             
                 this.props.history.push("/admin");
             } else {
 

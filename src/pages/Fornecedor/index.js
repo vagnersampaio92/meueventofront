@@ -12,7 +12,7 @@ const Main = ()=> {
         return (
             <Container>
 
-            <SideBar Escolha={escolha}></SideBar>
+            <SideBar ></SideBar>
             {escolha==1 &&
             <Perfil></Perfil>
             } 

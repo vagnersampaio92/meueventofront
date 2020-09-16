@@ -1,13 +1,24 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import {SideBarContext} from '../../store/index'
-import { } from './style.js';
+import { Container} from './style.js';
+import SideBar from '../../componets/SideBar'
 
 const Main = ()=> {
-    const {escolha} = useContext( SideBarContext )
+    const {  adm, Setadm} = useContext( SideBarContext )
+    const {  escolhaadm, SetEscolhaadm} = useContext( SideBarContext )
+
+   
     const {hendleMenu} = useContext( SideBarContext )
-        
+    useEffect(() => {
+        Setadm(true)
+      }, []);
+    console.log(escolhaadm)
         return (
-         <>kdadkla</>
+         <Container>
+         <SideBar ></SideBar>
+         {escolhaadm == 2 && <>jdsgfjhgsjf</>}
+         
+         </Container>
 
 
         );
