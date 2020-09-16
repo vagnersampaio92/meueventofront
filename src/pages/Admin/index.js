@@ -3,7 +3,8 @@ import {SideBarContext} from '../../store/index'
 import { Container} from './style.js';
 import SideBar from '../../componets/SideBar'
 import Homeadm from '../../componets/Homeadm/index'
-
+import Usuario from '../../componets/Usuario/index'
+import Fornecedor from '../../componets/Fornecedor/index'
 const Main = ()=> {
     const {  adm, Setadm} = useContext( SideBarContext )
     const {  escolhaadm, SetEscolhaadm} = useContext( SideBarContext )
@@ -18,7 +19,10 @@ const Main = ()=> {
          <Container>
          <SideBar ></SideBar>
          {escolhaadm == 1 && <><Homeadm /></>}
-         
+         {escolhaadm == 2 && <><Usuario /></>}
+         {escolhaadm == 3 && <><Usuario /></>}
+         {escolhaadm == 4 && <><Usuario /></>}
+         {escolhaadm == 5 && <><Fornecedor /></>}
          </Container>
 
 

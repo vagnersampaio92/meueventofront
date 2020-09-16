@@ -33,12 +33,12 @@ export const Card = styled.div`
 border: 1px solid #FF522C;
 box-sizing: border-box;
 border-radius: 18px;
-padding:10px 20px 20px 20px;
+padding:15px 25px 25px 25px;
 
     h4{
         font-style: normal;
         font-weight: 600;
-        font-size: 15x;
+        font-size: 18x;
         line-height: 24px;
 /* or 133% */
 
@@ -50,13 +50,13 @@ padding:10px 20px 20px 20px;
         color: #666666;
 
         text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-        margin-bottom:10px;
+        margin-bottom:15px;
 
     }
     p{
         font-style: normal;
         font-weight: 600;
-        font-size: 15px;
+        font-size: 18px;
         line-height: 24px;
 /* or 86% */
 
@@ -71,7 +71,7 @@ padding:10px 20px 20px 20px;
     span{
         font-style: normal;
         font-weight: 600;
-        font-size: 20px;
+        font-size: 28px;
         line-height: 24px;
 /* or 86% */
 
