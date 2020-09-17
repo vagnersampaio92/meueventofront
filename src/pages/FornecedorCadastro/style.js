@@ -27,6 +27,11 @@ export const Imginterna = styled.img`
     margin-bottom:60px;    
     border-radius: 18px;
     border: 1px solid #FF522C;
+    @media (max-width: 1000px) {
+       display: none;
+      
+     
+}
 `;
 
 
@@ -36,6 +41,11 @@ export const Card = styled.div`
     display:flex;
     height: 65vh;
     width: 75%;
+    @media (max-width: 1000px) {
+      width: 100%;
+       border: 0;   
+     
+}
 `;
 export const AlinhaBotao = styled.div`
   display: flex;
@@ -63,10 +73,25 @@ export const Divide = styled.div`
 `;
 export const Dividenovo = styled.div`
   display: flex;
-  width:100%;
+  width:100% !important;
+  justify-content: space-between;
+  .encolhe{
+    width:45% !important;
+  }
 
+  @media (max-width: 1000px) {
+      flex-direction: column;
+      .MuiInput-root{
+        width:100% !important;
+      }
+     .MuiFormControl-root .MuiTextField-root{
+      width:100% !important;
+     }
+     .encolhe{
+      width:100% !important;
+  }
+}
 
-  justify-content: space-around;
 `;
 export const Buttonnew = styled.div`
   width:200px;

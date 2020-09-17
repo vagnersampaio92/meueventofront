@@ -62,8 +62,8 @@ export default class Login extends Component {
                             <TextField id="standard-basic" onChange={e => { this.setState({ cidade: e.target.value }) }} style={{ marginBottom: 10, width: '50%', marginLeft: 50 }} label="Sua cidade" />
                         </Dividenovo> */}
                         <Dividenovo>
-                            <TextField type="password" id="standard-basic" onChange={e => { this.setState({ password: e.target.value }) }} style={{ marginBottom: 10, width: '50%' }} label="Senha" />
-                            <TextField type="password" id="standard-basic" onChange={e => { this.setState({ confirmpassword: e.target.value }) }} style={{ marginBottom: 10, width: '50%', marginLeft: 50 }} label="Confirmar Senha" />
+                            <TextField className="encolhe" type="password" id="standard-basic" onChange={e => { this.setState({ password: e.target.value }) }} style={{ marginBottom: 10,   }} label="Senha" />
+                            <TextField className="encolhe" type="password" id="standard-basic" onChange={e => { this.setState({ confirmpassword: e.target.value }) }} style={{ marginBottom: 10,    }} label="Confirmar Senha" />
                         </Dividenovo>
 
                         <Ajustaaltura>
