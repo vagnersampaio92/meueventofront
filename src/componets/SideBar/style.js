@@ -9,7 +9,7 @@ display:flex;
 flex-direction: column;
 align-items: center;
 
-height: 100% !important;
+height: 100% ;
 width: 30%;
 border-right: 1px solid #FF522C;
 padding-top:20px;
@@ -20,6 +20,11 @@ padding-top:20px;
     .component{
       
     }
+
+
+ @media (max-width: 904px) {
+    display: none;
+   }
 
 `;
 

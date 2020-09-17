@@ -131,3 +131,8 @@ p{
 }
 
 `;
+
+// @media (min-width: 481px) {
+//     /* max-width:240px; */
+//     height:150px;
+//    }

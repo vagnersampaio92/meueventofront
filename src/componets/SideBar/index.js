@@ -35,7 +35,7 @@ const SideBar = () => {
             <Container>
                 <Img src={logo} />
                 {!adm ?
-                    <><Line onClick={() => hendleMenu(1)}>Meu Perfil<Span>{sub == 2 ? <ExpandMoreIcon onClick={() => Setsub(1)}></ExpandMoreIcon> : <ExpandLessIcon onClick={() => Setsub(2)}></ExpandLessIcon>}</Span></Line>
+                    <Alinha><Line onClick={() => hendleMenu(1)}>Meu Perfil<Span>{sub == 2 ? <ExpandMoreIcon onClick={() => Setsub(1)}></ExpandMoreIcon> : <ExpandLessIcon onClick={() => Setsub(2)}></ExpandLessIcon>}</Span></Line>
                         {escolha == 1 && sub == 1 &&
                             <>
                                 <Line className={(subescolha == 1) ? "active" : "component"} onClick={() => SetsubEscolha(1)}>Fotos</Line>
@@ -44,7 +44,7 @@ const SideBar = () => {
                         }
                         <Line onClick={() => hendleMenu(3)}>Meus Pacotes</Line>
                         <Sair onClick={() => sair()}>Sair</Sair>
-                    </> :
+                    </Alinha> :
                     <Alinha>
                         <Line className={(escolhaadm == 1) ? "active" : "component"} onClick={() => SetEscolhaadm(1)}>Home</Line>
                         <Line className={(escolhaadm == 2) ? "active" : "component"} onClick={() => SetEscolhaadm(2)}>Usuários</Line>

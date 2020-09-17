@@ -13,6 +13,7 @@ const Main = ()=> {
             <Container>
 
             <SideBar ></SideBar>
+            <div className='teste'>
             {escolha==1 &&
             <Perfil></Perfil>
             } 
@@ -20,7 +21,7 @@ const Main = ()=> {
             <Planos></Planos>
             } 
            
-        
+        </div>
             </Container>
 
 
