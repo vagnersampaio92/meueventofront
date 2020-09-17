@@ -121,6 +121,10 @@ justify-content: center;
 .MuiInputBase-root{
 
     width:300px;
+    @media (max-width: 525px) {
+        width:150px;
+     
+}
 }
 button{
     width: 98px;

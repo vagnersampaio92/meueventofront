@@ -9,11 +9,11 @@ const Homeadm = () => {
         <Container>
             {detalhe == '' ?
                 <>
-                    <Titulo>Usuários cadastrados na plataforma</Titulo>
+                    <Titulo>Fornecedores cadastrados na plataforma</Titulo>
                     <Busca>
                         {/* <p>Pesquisa usuário por email</p> */}
 
-                        <TextField id="standard-basic" label="Pesquisa Fornecedor por email" />
+                        <TextField id="standard-basic" label="Pesquisa por email" />
                         <button >Pesquisar</button>
                     </Busca>
                     <Box>

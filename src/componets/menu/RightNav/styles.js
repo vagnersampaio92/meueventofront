@@ -104,7 +104,7 @@ position: absolute;
 width: 56px;
 height: 34px;
 
-top: calc(50% - 34px/2 + 319px);
+top: calc(30% - 34px/2 + 319px);
 
 
 font-style: normal;

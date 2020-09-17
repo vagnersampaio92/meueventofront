@@ -96,6 +96,11 @@ margin-left:30px;
 .MuiInputBase-root{
 
     width:300px;
+    @media (max-width: 525px) {
+        width:200px;
+     
+}
+
 }
 button{
     width: 98px;

@@ -13,7 +13,7 @@ const Homeadm = () => {
                     <Busca>
                         {/* <p>Pesquisa usuário por email</p> */}
 
-                        <TextField id="standard-basic" label="Pesquisa usuário por email" />
+                        <TextField id="standard-basic" label="Pesquisa por email" />
                         <button >Pesquisar</button>
                     </Busca>
                     <Box>

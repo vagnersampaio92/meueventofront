@@ -11,7 +11,7 @@ const Homeadm = () => {
                     <Busca>
 
 
-                        <TextField id="standard-basic" label="Digite aqui nova categoria" />
+                        <TextField id="standard-basic" label="Nova categoria" />
                         <button >Salvar</button>
                     </Busca>
                     <Box>
