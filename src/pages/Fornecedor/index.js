@@ -4,6 +4,7 @@ import { Container, Img, Card, Card2, Buttongroup } from './style.js';
 import SideBar from '../../componets/SideBar'
 import Perfil from'../../componets/Perfil'
 import Planos from '../../componets/planos/index'
+import Navbar from '../../componets/menu/Navbar/Navbar';
 
 const Main = ()=> {
     const {escolha} = useContext( SideBarContext )
@@ -11,7 +12,7 @@ const Main = ()=> {
         
         return (
             <Container>
-
+                        <Navbar></Navbar>
             <SideBar ></SideBar>
             <div className='teste'>
             {escolha==1 &&

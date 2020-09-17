@@ -46,7 +46,7 @@ export const Span = styled.span`
 svg{
    width:15px;
    height:15px;
-   margin-left:50%;
+  
    background: #FF522C;
    color: white;
    border-radius:50%;
@@ -54,7 +54,8 @@ svg{
 `;
 
 export const Line = styled.div`
-
+ display: flex;
+  justify-content: space-between;
    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
    max-width: 200px;
    padding-bottom:3px;
