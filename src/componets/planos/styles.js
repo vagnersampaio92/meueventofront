@@ -5,9 +5,42 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
- 
+  .Carousel-indicators-68{
+    display: none !important;
+  }
   width:100%;
   .ajusta1{
+    .ajusta2{
+      border-top: 2px solid rgba(0, 0, 0, 0.15);
+  margin-top: 10%;
+  margin-left: -15%;
+ text-align: left;
+ padding-top:60px;
+ width: 100% !important;
+ p{
+   margin-bottom: 10px;
+  font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 24px;
+/* or 171% */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.16px;
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: #666666;
+
+text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+ }
+  @media (max-width: 904px) {
+     display: none !important;
+     
+}
+
+
+}
   @media (max-width: 905px) {
      display: none !important;
      
@@ -27,6 +60,8 @@ export const Container = styled.div`
      display: none !important;
      
 }
+
+
 
   }
   .Carousel-root-67{

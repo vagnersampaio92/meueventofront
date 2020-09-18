@@ -33,10 +33,15 @@ const MainPerfil = () => {
                         </div>
                     </Card>
                 </Box>
+                <div className='ajusta2'>
+                    <p>Gratuitos não ficam na lista de espera para os PREMIUM</p>
+                    <p>Ordem de colocação na primeira página é preirizado o plano PREMIUM</p>
+                    <p>Vendemos posicionamento e visibilidade.</p>
+                </div>
             </div>
 
 
-            <Carousel className='ajusta' animation="slide" autoPlay="false" timeout="0">
+            <Carousel activeIndicatorProps="false" className='ajusta' animation="slide" autoPlay="false" timeout="0">
                 <Card>
                     <Cadtitle>Plano FREE</Cadtitle>
                     <P>-Só pode comunicar via portal (solicitar orçamento)</P>
