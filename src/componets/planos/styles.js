@@ -7,7 +7,51 @@ export const Container = styled.div`
   align-items: center;
  
   width:100%;
+  .ajusta1{
+  @media (max-width: 905px) {
+     display: none !important;
+     
+}
+}
+  .ajusta{
+    margin-top:30px;
+    display: flex !important;
+    width: 100vw !important;
+    align-items: center !important;
+    justify-content: center !important;
+    @media (min-width: 591px) {
+      width: 80vw !important;
+     
+}
+@media (min-width: 904px) {
+     display: none !important;
+     
+}
 
+  }
+  .Carousel-root-67{
+
+  }
+  .MuiIconButton-root:hover{
+    background-color: #FF522C !important;
+    opacity: 1 !important;
+  }
+  .MuiIconButton-root{
+    background-color: #FF522C !important;
+    opacity: 1 !important;
+    margin:0 10px;
+    height:30px;
+    width:30px;
+  }
+  .Carousel-indicators-68{
+    display: none !important;
+  }
+  .Carousel-prev-78{
+
+  }
+  .Carousel-next77{
+  
+  }
 `;
 export const Box = styled.div`
 margin-top:100px;
@@ -17,7 +61,7 @@ display:flex;
 export const Titulo = styled.div`
 text-align:left;
 margin-top:50px;
-margin-left:-700px;
+margin-left:-70%;
 
 font-style: normal;
 font-weight: 600;
@@ -32,13 +76,19 @@ letter-spacing: 0.16px;
 font-feature-settings: 'pnum' on, 'lnum' on;
 text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 color: #666666;
-
+@media (max-width: 905px) {
+       display: none !important;
+     
+}
 
 `;
 
 export const Card = styled.div`
 width: 250px !important;
-
+@media (max-width: 905px) {
+  margin-left:0px;
+     
+}
 word-wrap: break-word;
 border: 1px solid #FF522C;
 border-radius:10px;

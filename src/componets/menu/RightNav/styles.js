@@ -83,6 +83,7 @@ svg{
    background: #FF522C;
    color: white;
    border-radius:50%;
+   margin-left: 10px;
 }
 `;
 
