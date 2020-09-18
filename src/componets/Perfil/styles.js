@@ -11,7 +11,7 @@ export const Container = styled.div`
     text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
   }
   width:100%;
-
+   padding-bottom: 50px;
 `;
 export const Divide = styled.div`
   display: flex;
@@ -48,12 +48,32 @@ export const Dividenovo = styled.div`
     margin-top:30px !important;
     }
 
-  justify-content: space-around;
+    justify-content: space-between;
+
+  .encolhe{
+    width:45% !important;
+  }
+
+  @media (max-width: 1000px) {
+      flex-direction: column;
+      .MuiInput-root{
+        width:100% !important;
+      }
+     .MuiFormControl-root .MuiTextField-root{
+      width:100% !important;
+     }
+     .encolhe{
+      width:100% !important;
+  }
+  }
 `;
 export const Containerexterno = styled.div`
   display: flex;
   width:50%;
   flex-direction: column;
+  @media (max-width: 1000px) {
+    width:90%;
+  }
   p{
     margin-top:15px;
     margin-bottom:15px;

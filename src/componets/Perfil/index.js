@@ -138,8 +138,8 @@ const MainPerfil = () => {
             <TextField id="standard-basic" onChange={e => { Setperfil({ ...perfil, ["email"]: e.target.value }) }} defaultValue={perfil.email} style={{ marginBottom: 10 }} label="Email" />
             <Dividenovo>
               {/* <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width:'50%' }} label="Seu estado" /> */}
-              <TextField id="standard-basic" onChange={e => { Setperfil({ ...perfil, ["phone"]: e.target.value }) }} defaultValue={perfil.phone} style={{ marginBottom: 10, width: '45%' }} label="Telefone" />
-              <TextField id="standard-basic" onChange={e => { Setperfil({ ...perfil, ["cidade"]: e.target.value }) }} defaultValue={perfil.cidade} style={{ marginBottom: 10, width: '50%' }} label="Sua cidade" />
+              <TextField className="encolhe" id="standard-basic" onChange={e => { Setperfil({ ...perfil, ["phone"]: e.target.value }) }} defaultValue={perfil.phone} style={{ marginBottom: 10 }} label="Telefone" />
+              <TextField className="encolhe" id="standard-basic" onChange={e => { Setperfil({ ...perfil, ["cidade"]: e.target.value }) }} defaultValue={perfil.cidade} style={{ marginBottom: 10 }} label="Sua cidade" />
             </Dividenovo>
             {/* <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10,width:'45%'  }} label="Email" /> */}
             <AlinhaBotao>
@@ -208,20 +208,20 @@ const MainPerfil = () => {
 
 
           <Dividenovo>
-            <TextField id="standard-basic" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["name"]: e.target.value }) }} style={{ marginBottom: 10, width: '50%' }} defaultValue={dados[0].name} label="Nome da vitrine" />
-            <TextField id="standard-basic" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["cidade"]: e.target.value }) }} style={{ marginBottom: 10, width: '50%',  marginLeft: 50 }} defaultValue={perfil.cidade}label="Sua cidade" />
+            <TextField className="encolhe" id="standard-basic" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["name"]: e.target.value }) }} style={{ marginBottom: 10, width: '50%' }} defaultValue={dados[0].name} label="Nome da vitrine" />
+            <TextField className="encolhe" id="standard-basic" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["cidade"]: e.target.value }) }} style={{ marginBottom: 10, width: '50%',  }} defaultValue={perfil.cidade}label="Sua cidade" />
           </Dividenovo>
           <Dividenovo>
-            <TextField id="standard-basic" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["valormenor"]: e.target.value }) }} style={{ marginBottom: 10, width: '50%' }} defaultValue={dados[0].valormenor} label="Menor valor" />
-            <TextField id="standard-basic" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["valormaior"]: e.target.value }) }} style={{ marginBottom: 10, width: '50%', marginLeft: 50 }} defaultValue={dados[0].valormaior} label="Maior valor" />
+            <TextField className="encolhe" id="standard-basic" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["valormenor"]: e.target.value }) }} style={{ marginBottom: 10, width: '50%' }} defaultValue={dados[0].valormenor} label="Menor valor" />
+            <TextField  className="encolhe" id="standard-basic" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["valormaior"]: e.target.value }) }} style={{ marginBottom: 10, width: '50%',  }} defaultValue={dados[0].valormaior} label="Maior valor" />
           </Dividenovo>
           <Dividenovo>
-            <TextField id="standard-basic" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["servico"]: e.target.value }) }} style={{ marginBottom: 10, width: '50%' }} defaultValue={dados[0].servico} label="Serviços" />
-            <TextField id="standard-basic" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["locais"]: e.target.value }) }}style={{ marginBottom: 10, width: '50%', marginLeft: 50 }} defaultValue={dados[0].locais} label="Locais" />
+            <TextField className="encolhe" id="standard-basic" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["servico"]: e.target.value }) }} style={{ marginBottom: 10, width: '50%' }} defaultValue={dados[0].servico} label="Serviços" />
+            <TextField className="encolhe" id="standard-basic" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["locais"]: e.target.value }) }}style={{ marginBottom: 10, width: '50%',  }} defaultValue={dados[0].locais} label="Locais" />
           </Dividenovo>
 
           <p>Descreva seu serviço</p>
-          <TextField id="outlined-basic" variant="outlined" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["descricao"]: e.target.value }) }} style={{ marginBottom: 10 }} defaultValue={dados[0].descricao} label="Descrição" />
+          <TextField className="encolhe" id="outlined-basic" variant="outlined" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["descricao"]: e.target.value }) }} style={{ marginBottom: 10 }} defaultValue={dados[0].descricao} label="Descrição" />
           <AlinhaBotao>
             <Buttonnew onClick={() => this.buscar()}>Salvar vitrine</Buttonnew >
           </AlinhaBotao>
