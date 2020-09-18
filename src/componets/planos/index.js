@@ -41,7 +41,7 @@ const MainPerfil = () => {
             </div>
 
 
-            <Carousel activeIndicatorProps="false" className='ajusta' animation="slide" autoPlay="false" timeout="0">
+            <Carousel activeIndicatorProps="false" className='ajusta' animation="slide" indicators={false} autoPlay={false} timeout="0">
                 <Card>
                     <Cadtitle>Plano FREE</Cadtitle>
                     <P>-Só pode comunicar via portal (solicitar orçamento)</P>
