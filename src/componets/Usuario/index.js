@@ -18,6 +18,11 @@ const Homeadm = () => {
         console.log(resposta.data)
         SetUsuarios(resposta.data)
     }
+    const deleta = async (id) => {
+        const resposta = await api.delete('excluiusuario/'+id)
+        carrega()
+        Setdetalhe({ ...detalhe, ["name"]: undefined})
+    }
 
     const email = async () => {
 
@@ -64,7 +69,7 @@ const Homeadm = () => {
                         <p>{detalhe.email}</p>
                         <p>{detalhe.cidade}</p>
                         <p>{detalhe.phone}</p>
-                        <button onClick={e => { }}>Deletar</button>
+                        <button onClick={()=>{deleta(detalhe.id)}}>Deletar</button>
                     </Boxd>
                 </Alinha>
 
