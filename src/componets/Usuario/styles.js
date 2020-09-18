@@ -48,6 +48,7 @@ button{
 }
 
 `;
+// 806
 export const Boxd = styled.div`
 border: 1px solid #FF522C;
 width:50%;
@@ -55,6 +56,13 @@ box-sizing: border-box;
 border-radius: 18px;
 margin-top:10px;
 padding:25px;
+@media (max-width: 806px) {
+    width:90%;
+    p{
+        font-size: 18px !important;
+    }
+     
+}
 p{
     font-style: normal;
 font-weight: 500;
