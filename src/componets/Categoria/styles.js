@@ -4,6 +4,17 @@ export const Container = styled.div`
 margin-top:30px;
 padding: 10px 40px;
 width:100%;
+
+input[type="file"] {
+   border:0;
+   clip:rect(0,0,0,0);
+   height:1px !important;
+   overflow:hidden;
+   position:absolute;
+   word-spacing:nowrap;
+
+  }
+
 `;
 
 export const Titulo = styled.div`
@@ -89,6 +100,32 @@ align-items:center;
 justify-content: center;
 margin-bottom:50px;
 margin-left:30px;
+@media (max-width: 626px) {
+        flex-direction: column;
+     
+}
+.ajusta{
+    display: flex;
+    @media (max-width: 626px) {
+       margin-top:12px;
+     
+}
+}
+.button{
+     
+    background:#FF522C;
+    color: white;
+    text-align:center;
+    cursor: pointer;
+    border-radius: 10px;
+    padding:4px 10px 2px 10px;
+    letter-spacing: 0.16px;
+    color: #FFFFFF;
+    margin-left:6px;
+    margin-right:6px;
+    font-size: 13px;
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+ }
 .MuiInputBase-root{
 
     width:300px;

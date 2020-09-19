@@ -19,7 +19,7 @@ const Homeadm = () => {
             <Titulo>Cadastrar nova categoria</Titulo>
             <Busca>
                 <FormControl>
-                    <InputLabel id="demo-simple-select-label">Escolha a categoria</InputLabel>
+                    <InputLabel id="demo-simple-select-label">Categoria</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
@@ -38,7 +38,7 @@ const Homeadm = () => {
 
             {age == '' ? <><div className="texto"><p>Sua lista de perguntas sera carregada assim que você escolher uma categoria</p></div></> : <>
         <Busca>
-        <TextField id="standard-basic" className="espaco" label="Cadastre uma pergunta" />
+        <TextField id="standard-basic" className="espaco" label="Pergunta" />
         <button >Cadastrar</button>
         </Busca>
                 
