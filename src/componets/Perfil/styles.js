@@ -11,7 +11,12 @@ export const Container = styled.div`
     text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
   }
   width:100%;
+  min-height:100vh;
    padding-bottom: 50px;
+   /* 904 */
+   @media (min-width: 905px) {
+   border-left: 1px solid #FF522C;
+   }
 `;
 export const Divide = styled.div`
   display: flex;

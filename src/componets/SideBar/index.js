@@ -32,7 +32,7 @@ const SideBar = () => {
 
     return (
         <>
-            <Container>
+            <Container adm={adm}>
                 <Img src={logo} />
                 {!adm ?
                     <Alinha><Line onClick={() => hendleMenu(1)}>Meu Perfil<Span>{sub == 2 ? <ExpandMoreIcon onClick={() => Setsub(1)}></ExpandMoreIcon> : <ExpandLessIcon onClick={() => Setsub(2)}></ExpandLessIcon>}</Span></Line>
