@@ -17,7 +17,7 @@ const MainPerfil = () => {
                         <Cadtitle>Plano FREE</Cadtitle>
                         <P>-Só pode comunicar via portal (solicitar orçamento)</P>
                         <P>-Não tem prioridade na listagem dos fornecedores </P>
-                        <div>
+                        <div className="alinha">
                             <button>Já possui</button>
                         </div>
 
@@ -28,7 +28,7 @@ const MainPerfil = () => {
                         <P>-Unico que recebe telefone e e-mail</P>
                         <P>-Acessoramento de gestor de negócio para deixar a vitrine mais atrativa</P>
                         <P> SOMENTE 12x de 125 reais.</P>
-                        <div>
+                        <div className="alinha">
                             <button>Eu quero!</button>
                         </div>
                     </Card>

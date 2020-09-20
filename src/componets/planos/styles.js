@@ -8,6 +8,9 @@ export const Container = styled.div`
   .Carousel-indicators-68{
     display: none !important;
   }
+  @media (min-width: 905px) {
+   border-left: 1px solid #FF522C;
+   }
   width:100%;
   .ajusta1{
     .ajusta2{
@@ -120,6 +123,11 @@ color: #666666;
 
 export const Card = styled.div`
 width: 250px !important;
+height:400px;
+.alinha{
+  height:400px;
+  align-content: flex-end;
+}
 @media (max-width: 905px) {
   margin-left:0px;
      
