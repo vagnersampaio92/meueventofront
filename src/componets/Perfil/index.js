@@ -94,6 +94,26 @@ const MainPerfil = () => {
     console.log(resposta)
  
   }
+  const Salvavitrine= async () => {
+    
+    let data={}
+    data.id=perfil.id
+    data.dados={}
+    data.dados.name=novaVitrine.name
+    data.dados.cidade=novaVitrine.cidade
+    data.dados.valormenor=novaVitrine.valormenor
+    data.dados.valormaior=novaVitrine.valormaior
+    data.dados.servico=novaVitrine.servico
+    data.dados.locais=novaVitrine.locais
+    data.dados.descricao=novaVitrine.descricao
+    // name cidade valormenor valormaior servico locais descricao
+    const resposta = await api.put('editavitrine', data)
+    console.log(resposta)
+ 
+  }
+
+
+
   const deletafoto = async (id) => {
     
     const resposta = await api.delete('excluifotos/'+id)
@@ -223,7 +243,7 @@ const MainPerfil = () => {
           <p>Descreva seu serviço</p>
           <TextField className="encolhe" id="outlined-basic" variant="outlined" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["descricao"]: e.target.value }) }} style={{ marginBottom: 10 }} defaultValue={dados[0].descricao} label="Descrição" />
           <AlinhaBotao>
-            <Buttonnew onClick={() => this.buscar()}>Salvar vitrine</Buttonnew >
+            <Buttonnew onClick={() => {Salvavitrine()}}>Salvar vitrine</Buttonnew >
           </AlinhaBotao>
 
         </Containerexterno>

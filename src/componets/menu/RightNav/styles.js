@@ -47,6 +47,9 @@ height: 100% ;
 width: 30%;
 border-right: 1px solid #FF522C;
 padding-top:20px;
+.tab{
+   margin-left:20px;
+}
 
 .active{
         border-bottom:1px solid #e90000 !important;

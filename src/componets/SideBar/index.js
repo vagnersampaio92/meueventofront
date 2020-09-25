@@ -37,10 +37,10 @@ const SideBar = () => {
                 {!adm ?
                     <Alinha><Line onClick={() => hendleMenu(1)}>Meu Perfil<Span>{sub == 2 ? <ExpandMoreIcon onClick={() => Setsub(1)}></ExpandMoreIcon> : <ExpandLessIcon onClick={() => Setsub(2)}></ExpandLessIcon>}</Span></Line>
                         {escolha == 1 && sub == 1 &&
-                            <>
+                            <div className="tab">
                                 <Line className={(subescolha == 1) ? "active" : "component"} onClick={() => SetsubEscolha(1)}>Fotos</Line>
                                 <Line className={(subescolha == 2) ? "active" : "component"} onClick={() => SetsubEscolha(2)}>Videos</Line>
-                            </>
+                            </div>
                         }
                         <Line onClick={() => hendleMenu(3)}>Meus Pacotes</Line>
                         <Sair onClick={() => sair()}>Sair</Sair>

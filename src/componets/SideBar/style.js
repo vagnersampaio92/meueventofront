@@ -14,6 +14,9 @@ width: 30%;
 border-right: 1px solid ;
 padding-top:20px;
 border-color: ${({ adm  }) => adm ? '#FF522C' : '#FFFFFF'};
+.tab{
+   margin-left:20px;
+}
 .active{
         border-bottom:1px solid #e90000 !important;
     }

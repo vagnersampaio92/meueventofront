@@ -32,10 +32,10 @@ const RightNav = ({ open }) => {
      <Ul open={open}>
       <li><Line onClick={() => hendleMenu(1)}>Meu Perfil<Span>{sub == 2 ? <ExpandMoreIcon onClick={() => Setsub(1)}></ExpandMoreIcon> : <ExpandLessIcon onClick={() => Setsub(2)}></ExpandLessIcon>}</Span></Line></li>
       {escolha == 1 && sub == 1 &&
-                <>
+                <div className="tab">
                    <li><Line className={(subescolha == 1) ? "active" : "component"} onClick={() => SetsubEscolha(1)}>Fotos</Line></li> 
                    <li><Line className={(subescolha == 2) ? "active" : "component"} onClick={() => SetsubEscolha(2)}>Videos</Line></li>
-                </>
+                </div>
             }
       <li> <Line onClick={() => hendleMenu(3)}>Meus Pacotes</Line></li>
       <li><Sair onClick={() => sair()}>Sair</Sair></li>
