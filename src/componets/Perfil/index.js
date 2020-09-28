@@ -80,6 +80,32 @@ const MainPerfil = () => {
     window.location.reload();
   };
 
+
+  async function sendVideosToserve(files) {
+
+    // this.file = this.$refs.file.files[0];
+    console.log(dados[0].id)
+    const formData = new FormData();
+    formData.append(
+      'file', files[0]
+      );
+
+     
+    const resposta = await api.post('posts', formData)
+      console.log(resposta.data)
+    let v ={}
+    v.vitrine_id=dados[0].id
+    v.arrayvideos=[{}]
+    v.arrayvideos[0].videos=resposta.data
+    console.log(v)
+    const respostavideos = await api.post('registervideos', v)
+    console.log(respostavideos.data)
+    carrega()
+    window.location.reload();
+  };
+
+
+
   const carrega = async () => {
     const id = sessionStorage.getItem('fornecedorid')
     const resposta = await api.get('listavitrine/' + id)
@@ -97,15 +123,32 @@ const MainPerfil = () => {
   const Salvavitrine= async () => {
     
     let data={}
-    data.id=perfil.id
+    data.id=dados[0].id
     data.dados={}
-    data.dados.name=novaVitrine.name
-    data.dados.cidade=novaVitrine.cidade
-    data.dados.valormenor=novaVitrine.valormenor
-    data.dados.valormaior=novaVitrine.valormaior
-    data.dados.servico=novaVitrine.servico
-    data.dados.locais=novaVitrine.locais
-    data.dados.descricao=novaVitrine.descricao
+    if(novaVitrine.name){
+      data.dados.name=novaVitrine.name
+    }
+    if(novaVitrine.cidade){
+      data.dados.cidade=novaVitrine.cidade
+    }
+    if(novaVitrine.valormenor){
+      data.dados.valormenor=novaVitrine.valormenor
+    }
+    if(novaVitrine.valormaior){
+      data.dados.valormaior=novaVitrine.valormaior
+    }
+    if(novaVitrine.servico){
+      data.dados.servico=novaVitrine.servico
+    }
+    if(novaVitrine.locais){
+      data.dados.locais=novaVitrine.locais
+    }
+    if(novaVitrine.descricao){
+      data.dados.descricao=novaVitrine.descricao
+    }
+  
+    
+    console.log(data)
     // name cidade valormenor valormaior servico locais descricao
     const resposta = await api.put('editavitrine', data)
     console.log(resposta)
@@ -122,7 +165,13 @@ const MainPerfil = () => {
     window.location.reload();
   }
 
-
+  const deletavideo = async (id) => {
+    
+    const resposta = await api.delete('excluivideos/'+id)
+    // const remove = Vitrine.fotos.filter(vi => vi.id != id)
+    // SetvVtrine({...Vitrine, ["fotos"]:[... remove]} )
+    window.location.reload();
+  }
 
   console.log(Vitrine)
   return (
@@ -176,7 +225,7 @@ const MainPerfil = () => {
           </Dividenovo>
           {subescolha == 1 &&
             <div style={{ width: '100%' }}>
-              <Carousel animation="slide" autoPlay="false" timeout="0">
+              <Carousel animation="slide" autoPlay={false}  timeout="0">
                 {
                   Vitrine.fotos.map((foto) => (
                     <>
@@ -201,14 +250,19 @@ const MainPerfil = () => {
 
           {subescolha == 2 &&
             <div style={{ width: '100%' }}>
-              <Carousel  animation="slide" autoPlay="false" timeout="0">
+              <Carousel  animation="slide" autoPlay={false}  timeout="0">
                 {
                   Vitrine.videos.map((video) => (
                     <>
                       <iframe tyle={{ marginTop: 50 }} src={video.videos} ></iframe  >
                       <AlinhaBotaoExcluir>
-                        <Buttonnew onClick={() => this.buscar()}>Excluir video</Buttonnew >
+                      <input name="file" type="file"  id="file" onChange={e => { sendVideosToserve(e.target.files) }}></input>
+                       <label for="file" className="button">Adicionar video</label>
+                        <Buttonnew2 onClick={() => deletavideo(video.id)}>Excluir video</Buttonnew2>
                       </AlinhaBotaoExcluir>
+                      {/* <AlinhaBotaoExcluir>
+                        <Buttonnew onClick={() => this.buscar()}>Excluir video</Buttonnew >
+                      </AlinhaBotaoExcluir> */}
                     </>
                   ))
                 }
