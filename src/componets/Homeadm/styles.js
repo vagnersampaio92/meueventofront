@@ -8,6 +8,22 @@ word-wrap: break-word;
 
 `;
 
+export const ContainerSigners = styled.div`
+margin-top:30px;
+width:100%;
+padding: 10px;
+word-wrap: break-word;
+flex-direction: row;
+`;
+
+export const Divider = styled.div`
+width: 1px;
+heigth: 90%
+justicontent: center;
+background-color: #d4d4d4;
+`;
+
+
 export const Titulo = styled.div`
 font-style: normal;
 font-weight: 600;

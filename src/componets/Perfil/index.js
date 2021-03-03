@@ -231,14 +231,15 @@ const MainPerfil = () => {
                     <>
                       <Imgslide style={{ marginTop: 50 }} src={foto.fotos} ></Imgslide >
                       <AlinhaBotaoExcluir>
-                      <input name="file" type="file" accept="image/*" id="file" onChange={e => { sendPictureToserve(e.target.files) }}></input>
-                       <label for="file" className="button">Adicionar foto</label>
+                      
                         <Buttonnew2 onClick={() => deletafoto(foto.id)}>Excluir foto</Buttonnew2>
                       </AlinhaBotaoExcluir>
                     </>
                   ))
                 }
               </Carousel>
+              <input name="file" type="file" accept="image/*" id="file" onChange={e => { sendPictureToserve(e.target.files) }}></input>
+                       <label for="file" className="button">Adicionar foto</label>
               <Alinhacont>
                 {Vitrine.fotos.length} Fotos
         </Alinhacont>
@@ -256,9 +257,8 @@ const MainPerfil = () => {
                     <>
                       <iframe tyle={{ marginTop: 50 }} src={video.videos} ></iframe  >
                       <AlinhaBotaoExcluir>
-                      <input name="file" type="file"  id="file" onChange={e => { sendVideosToserve(e.target.files) }}></input>
-                       <label for="file" className="button">Adicionar video</label>
-                        <Buttonnew2 onClick={() => deletavideo(video.id)}>Excluir video</Buttonnew2>
+                     
+                      <Buttonnew2 onClick={() => deletavideo(video.id)}>Excluir video</Buttonnew2>
                       </AlinhaBotaoExcluir>
                       {/* <AlinhaBotaoExcluir>
                         <Buttonnew onClick={() => this.buscar()}>Excluir video</Buttonnew >
@@ -267,6 +267,8 @@ const MainPerfil = () => {
                   ))
                 }
               </Carousel>
+              <input name="file" type="file"  id="file" onChange={e => { sendVideosToserve(e.target.files) }}></input>
+              <label for="file" className="button">Adicionar video</label>
               <Alinhacont>
                 {Vitrine.videos.length} videos
        </Alinhacont>

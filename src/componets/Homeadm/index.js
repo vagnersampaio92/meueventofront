@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext, } from "react";
-import { Container, Titulo, Card, Box } from "./styles";
+import React, { useState, useEffect, Text, } from "react";
+import { Container, Titulo, Card, Box,ContainerSigners, Divider } from "./styles";
 import api from '../../services/api'
 const Homeadm = () => {
     const [Fornecedores, SetFornecedores] = useState('');
@@ -38,6 +38,31 @@ return(
                 <p><span>{Eventos}</span>/30 dias</p>
             </Card>
         </Box>
+        
+    <ContainerSigners>
+        <Box>
+            <Titulo>Ultimos usuários cadastrados</Titulo>
+            <Titulo>Ultimos fornecedores cadastrados</Titulo>
+        </Box>
+        <Box>
+            <Card>
+                <h4>João</h4>
+                <Divider></Divider>
+                <h4>Carlos Antunes</h4>
+                <h4>Marcio medeiros</h4>
+                <h4>Maria antonieta</h4>
+                <h4>Julia rosa</h4>
+            </Card>
+            <Card>
+                <h4>João</h4>
+                <Divider></Divider>
+                <h4>Carlos Antunes</h4>
+                <h4>Marcio medeiros</h4>
+                <h4>Maria antonieta</h4>
+                <h4>Julia rosa</h4>
+            </Card>
+        </Box>
+    </ContainerSigners>
     </Container>
 );
 

@@ -11,6 +11,16 @@ export const Container = styled.div`
     height: 100vh;
     width: 100%;
     background: white;
+
+    input[type="file"] {
+   border:0;
+   clip:rect(0,0,0,0);
+   height:1px;
+   overflow:hidden;
+   position:absolute;
+   word-spacing:nowrap;
+  }
+  
 `;
 
 export const Img = styled.img`
@@ -23,7 +33,7 @@ export const Img = styled.img`
 `;
 export const Imginterna = styled.img`
     width: 30%;
-    height: 65vh;
+    height: 100vh;
     margin-bottom:60px;    
     border-radius: 18px;
     border: 1px solid #FF522C;
@@ -34,12 +44,20 @@ export const Imginterna = styled.img`
 }
 `;
 
-
+export const Imgslide = styled.img`
+    width: 200px;
+     margin-top:50px;
+     height: 200px;
+     margin-bottom:20px;
+      max-height: 300px;
+      border:1px solid #FF522C;
+      border-radius: 50%;
+`;
 export const Card = styled.div`
     border-radius: 18px;
     border: 1px solid #FF522C;
     display:flex;
-    height: 65vh;
+    height: 100vh;
     width: 75%;
     @media (max-width: 1000px) {
       width: 100%;
@@ -108,7 +126,7 @@ export const Buttonnew = styled.div`
 `;
 export const Cardright = styled.div`
     display:flex;
-    height: 65vh;
+    height: 100vh;
     flex-direction:column;
     width:100%;
    

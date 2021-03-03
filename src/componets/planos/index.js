@@ -15,28 +15,47 @@ const MainPerfil = () => {
                 <Box>
                     <Card>
                         <Cadtitle>Plano FREE</Cadtitle>
-                        <P>-Só pode comunicar via portal (solicitar orçamento)</P>
-                        <P>-Não tem prioridade na listagem dos fornecedores </P>
-                        <div className="alinha">
+                        {/* <P>-Só pode comunicar via portal (solicitar orçamento)</P>
+                        <P>-Não tem prioridade na listagem dos fornecedores </P> */}
+                        {/* <div className="alinha">
                             <button>Já possui</button>
-                        </div>
+                        </div> */}
 
                     </Card>
+                    <Card><Cadtitle>Plano BÁSICO</Cadtitle></Card>
                     <Card>
                         <Cadtitle>Plano PREMIUM</Cadtitle>
-                        <P>-Aparece nos primeiros lugares na listagem de fornecedores</P>
+                        {/* <P>-Aparece nos primeiros lugares na listagem de fornecedores</P>
                         <P>-Unico que recebe telefone e e-mail</P>
                         <P>-Acessoramento de gestor de negócio para deixar a vitrine mais atrativa</P>
-                        <P> SOMENTE 12x de 125 reais.</P>
-                        <div className="alinha">
+                        <P> SOMENTE 12x de 125 reais.</P> */}
+                        {/* <div className="alinha">
                             <button>Eu quero!</button>
-                        </div>
+                        </div> */}
                     </Card>
                 </Box>
                 <div className='ajusta2'>
-                    <p>Gratuitos não ficam na lista de espera para os PREMIUM</p>
-                    <p>Ordem de colocação na primeira página é preirizado o plano PREMIUM</p>
-                    <p>Vendemos posicionamento e visibilidade.</p>
+                    <div style={{width: '800px',height:'200px'}}>
+                        <div style={{display:"flex",flexDirection:"row",borderBottom: "1px solid black"}}>
+                            <p>Preco</p>
+                            <p style={{marginLeft:'100px'}}>R$ 00,00</p>
+                            <p style={{marginLeft:'200px'}}>R$ 00,00</p>
+                            <p style={{marginLeft:'230px'}}>R$ 00,00</p>
+                        </div>
+                        <div style={{display:"flex",flexDirection:"row",borderBottom: "1px solid black"}}>
+                            <p>Comunicação</p>
+                            <p style={{marginLeft:'51px'}}>R$ 00,00</p>
+                            <p style={{marginLeft:'201px'}}>R$ 00,00</p>
+                            <p style={{marginLeft:'230px'}}>R$ 00,00</p>
+                        </div>
+                        <div style={{display:"flex",flexDirection:"row",borderBottom: "1px solid black"}}>
+                            <p>BREVE</p>
+                            <p style={{marginLeft:'97px'}}>R$ 00,00</p>
+                            <p style={{marginLeft:'200px'}}>R$ 00,00</p>
+                            <p style={{marginLeft:'230px'}}>R$ 00,00</p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
 

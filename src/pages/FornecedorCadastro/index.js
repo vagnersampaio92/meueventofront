@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
@@ -7,7 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 
-import { Container, Img, Card, Imginterna, Cardright, Dividenovo, AlinhaBotao, Buttonnew, Alinatitulo, Ajustaaltura } from './style.js';
+import { Container, Img, Imgslide, Card, Imginterna, Cardright, Dividenovo, AlinhaBotao, Buttonnew, Alinatitulo, Ajustaaltura } from './style.js';
 import logo from '../../assets/logo.png'
 import imageminterna from '../../assets/complementar.jpeg'
 import TextField from '@material-ui/core/TextField'
@@ -19,88 +19,128 @@ import { thisExpression } from '@babel/types';
 
 
 
-export default class Login extends Component {
+export default function Login() {
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [phone, setphone] = useState('')
+    const [password, setPassword] = useState('')
+    const [cidade, setCidade] = useState('')
+    const [status, setStatus] = useState('')
+    const [categorias, setCategorias] = useState([])
+    const [selectedCat, setSelected] = useState('')
+    const [idCat, setIdCat] = useState(0)
+    const [confirmpassword, setConfirmpassword] = useState('')
+    const [flag, setFlag] = useState(0)
+    const [serverFoto,setServerFoto] = useState('https://img.icons8.com/pastel-glyph/2x/person-male.png')
 
 
-    constructor() {
-        super();
+    useEffect(() => {
+        let cidade = {}
+        cidade.cidades = ['1']
+        api.post('listacategoriaporcidade', cidade).then(responsecidade => {
+            setCategorias(responsecidade.data.data)
+            console.log(responsecidade.data.data)
+        })
+    }, [])
 
-        this.state = {
-            name: '',
-            email: '',
-            phone: '',
-            password: '',
-            cidade: '',
-            status: '',
-            confirmpassword: '',
-            flag: 0
+    return (
+        <Container>
+            <Img src={logo} />
+            <Card>
+                <Imginterna src={imageminterna} />
 
+                <Cardright>
+                    <Alinatitulo>
+                        <p>Prossiga com seu cadastro</p>
+                    </Alinatitulo>
+                    <div style={{display:"flex",flexDirection:"column",width:"100%",alignItems:"center"}}>
+                    <Imgslide src={serverFoto} />
+                    <input name="file" type="file" accept="image/*" id="file" onChange={e => { sendPictureToserve(e.target.files) }}></input>
+                    <label for="file" className="button">Adicionar foto</label>
+                    </div>
+                    <TextField id="standard-basic" onChange={e => { setName(e.target.value) }} style={{ marginBottom: 10, width: '100%' }} label="Nome completo" />
+                    <TextField id="standard-basic" onChange={e => { setEmail(e.target.value) }} style={{ marginBottom: 10, width: '100%' }} label="Email" />
+                    <TextField id="standard-basic" onChange={e => { setCidade(e.target.value) }} style={{ marginBottom: 10, width: '100%' }} label="Sua cidade" />
+                    <TextField id="standard-basic" style={{ marginBottom: 10, width: '100%' }} label="Categoria" value={selectedCat} />
+                    {categorias.map((item) => (
+                        <div onClick={() => {
+                            setSelected(item.categoria.name)
+                            setIdCat(item.categoria.id)
+                        }}>
+                            {item.categoria.name}
+                        </div>
+                    ))}
 
-        }
-        this.baseState = this.state
-    }
-
-    render() {
-
-
-        return (
-            <Container>
-                <Img src={logo} />
-                <Card>
-                    <Imginterna src={imageminterna} />
-
-                    <Cardright>
-                        <Alinatitulo>
-                            <p>Prossiga com seu cadastro</p>
-                        </Alinatitulo>
-                        <TextField id="standard-basic" onChange={e => { this.setState({ name: e.target.value }) }} style={{ marginBottom: 10, width: '100%' }} label="Nome completo" />
-                        <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width: '100%' }} label="Email" />
-                        <TextField id="standard-basic" onChange={e => { this.setState({ cidade: e.target.value }) }} style={{ marginBottom: 10, width: '100%' }} label="Sua cidade" />
-
-                        {/* <Dividenovo>
+                    {/* <Dividenovo>
                             <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width: '50%' }} label="Seu estado" />
                             <TextField id="standard-basic" onChange={e => { this.setState({ cidade: e.target.value }) }} style={{ marginBottom: 10, width: '50%', marginLeft: 50 }} label="Sua cidade" />
                         </Dividenovo> */}
-                        <Dividenovo>
-                            <TextField className="encolhe" type="password" id="standard-basic" onChange={e => { this.setState({ password: e.target.value }) }} style={{ marginBottom: 10,   }} label="Senha" />
-                            <TextField className="encolhe" type="password" id="standard-basic" onChange={e => { this.setState({ confirmpassword: e.target.value }) }} style={{ marginBottom: 10,    }} label="Confirmar Senha" />
-                        </Dividenovo>
+                    <Dividenovo>
+                        <TextField className="encolhe" type="password" id="standard-basic" onChange={e => { setPassword(e.target.value) }} style={{ marginBottom: 10, }} label="Senha" />
+                        <TextField className="encolhe" type="password" id="standard-basic" onChange={e => { setConfirmpassword(e.target.value) }} style={{ marginBottom: 10, }} label="Confirmar Senha" />
+                    </Dividenovo>
 
-                        <Ajustaaltura>
-                            <FormControlLabel control={<Checkbox name="checkedG" />} label="Aceito os termos de uso do site" />
-                            <AlinhaBotao>
-                                <Buttonnew onClick={() => this.cadastrar()}>Cadastrar</Buttonnew >
-                            </AlinhaBotao>
-                        </Ajustaaltura>
+                    <Ajustaaltura>
+                        <FormControlLabel control={<Checkbox name="checkedG" />} label="Aceito os termos de uso do site" />
+                        <AlinhaBotao>
+                            <Buttonnew onClick={() => cadastrar()}>Cadastrar</Buttonnew >
+                        </AlinhaBotao>
+                    </Ajustaaltura>
 
-                    </Cardright>
-
-
-                </Card>
-
-            </Container>
+                </Cardright>
 
 
+            </Card>
 
-        );
-    };
+        </Container>
 
-    async cadastrar() {
-        if (this.state.password == this.state.confirmpassword) {
+
+
+    );
+
+
+    async function cadastrar() {
+        if (password == confirmpassword) {
             let data = {}
-            data.name = this.state.name
-            data.email = this.state.email
-            data.phone = this.state.phone
-            data.password = this.state.password
-            data.cidade = this.state.cidade
+            data.name = name
+            data.email = email
+            data.phone = phone
+            data.password = password
+            data.cidade = cidade
             data.tipo = 2
+            data.foto = serverFoto
             const response = await api.post('register', data)
 
-            let vitrine={}
-            vitrine.usuarioid=response.data.id
+            let vitrine = {}
+            vitrine.usuarioid = response.data.id
             const responsevitrine = await api.post('registervitrine', vitrine)
-            console.log(responsevitrine)
+
+            let categoria = {
+                vitrine_id: responsevitrine.data.id,
+                arrayvitrinecategorias: [
+                    {
+                        categoria_id: idCat
+                    }
+                ]
+            }
+            console.log(categoria)
+            const responsecategoria = await api.post('registervitrinecategoria', categoria)
+            window.location.replace("/loginfornecedor")
         }
+    }
+
+    async function sendPictureToserve(files) {
+        
+        const formData = new FormData();
+        formData.append(
+            'file', files[0]
+        );
+
+
+        const resposta = await api.post('posts', formData)    
+        setServerFoto(resposta.data) 
+        
     }
 }
 

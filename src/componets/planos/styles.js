@@ -16,7 +16,7 @@ export const Container = styled.div`
     .ajusta2{
       border-top: 2px solid rgba(0, 0, 0, 0.15);
   margin-top: 10%;
-  margin-left: -15%;
+  
  text-align: left;
  padding-top:60px;
  width: 100% !important;
@@ -123,7 +123,7 @@ color: #666666;
 
 export const Card = styled.div`
 width: 250px !important;
-height:400px;
+height:90px;
 .alinha{
   height:400px;
   align-content: flex-end;
@@ -137,7 +137,7 @@ border: 1px solid #FF522C;
 border-radius:10px;
 display: flex;
 flex-direction: column;
-padding: 10px 15px 30px 15px;
+justify-content: center;
 align-items: center;
 margin-left:30px;
 div{
@@ -167,7 +167,6 @@ font-weight: 900;
 font-size: 18px;
 line-height: 24px;
 /* or 133% */
-margin-bottom:30px;
 text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 display: flex;
 align-items: center;
