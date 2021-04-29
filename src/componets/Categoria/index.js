@@ -23,10 +23,18 @@ const Homeadm = () => {
     }
     const add = async () => {
         let data = {}
+        let dataCity = {}
         data.name=name
         data.foto=imagem
         const resposta = await api.post('registercategoria', data)
-  
+        dataCity.cidadeid = 1
+        dataCity.arraycategoriacidades = [
+            {
+                categoria_id:resposta.data.id
+            }
+        ]
+        const respCatCity = await api.post('registercategoriaciade',dataCity)
+        console.log(respCatCity)
         carrega()
     }
     async function sendPictureToserve(files) {
@@ -41,6 +49,7 @@ const Homeadm = () => {
         const resposta = await api.post('posts', formData)
 
         Setimagem(resposta.data)
+        alert('Imagem adicionada com sucesso')
     };
 
 
