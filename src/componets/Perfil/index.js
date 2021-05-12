@@ -24,6 +24,10 @@ const MainPerfil = () => {
  
   const [dados, SetDados] = useState([]);
 
+  const [responseFotos,setResponseFotos] = useState({})
+ 
+  const [responseVideos,setResponseVideos] = useState({})
+
   const [Vitrine, SetvVtrine] = useState({
 
   });
@@ -53,7 +57,6 @@ const MainPerfil = () => {
   useEffect(() => {
     if (dados.length > 0) {
       SetvVtrine({ ...Vitrine, ["fotos"]: dados[0].fotos, ["videos"]: dados[0].videos })
-
     }
   }, [dados]);
 
@@ -75,10 +78,9 @@ const MainPerfil = () => {
     v.arrayfotos[0].fotos=resposta.data
     console.log(v)
     const respostafotos = await api.post('registerfotos', v)
-    console.log(respostafotos.data)
+    setResponseFotos(respostafotos)
     carrega()
-    window.location.reload();
-    
+    // window.location.reload();
   };
 
 
@@ -100,7 +102,7 @@ const MainPerfil = () => {
     v.arrayvideos[0].videos=resposta.data
     console.log(v)
     const respostavideos = await api.post('registervideos', v)
-    console.log(respostavideos.data)
+    setResponseVideos(respostavideos)
     carrega()
     window.location.reload();
   };
@@ -153,6 +155,7 @@ const MainPerfil = () => {
     // name cidade valormenor valormaior servico locais descricao
     const resposta = await api.put('editavitrine', data)
     console.log(resposta)
+    window.location.reload()
  
   }
 
@@ -226,6 +229,7 @@ const MainPerfil = () => {
           </Dividenovo>
           {subescolha == 1 &&
             <div style={{ width: '100%' }}>
+              {console.log(dados)}
               <Carousel animation="slide" autoPlay={false}  timeout="0">
                 {
                   Vitrine.fotos.map((foto) => (
