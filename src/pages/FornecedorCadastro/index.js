@@ -62,15 +62,37 @@ export default function Login() {
                     <TextField id="standard-basic" onChange={e => { setName(e.target.value) }} style={{ marginBottom: 10, width: '100%' }} label="Nome completo" />
                     <TextField id="standard-basic" onChange={e => { setEmail(e.target.value) }} style={{ marginBottom: 10, width: '100%' }} label="Email" />
                     <TextField id="standard-basic" onChange={e => { setCidade(e.target.value) }} style={{ marginBottom: 10, width: '100%' }} label="Sua cidade" />
-                    <TextField id="standard-basic" style={{ marginBottom: 10, width: '100%' }} label="Categoria" value={selectedCat} />
-                    {categorias.map((item) => (
+                    {/* <TextField id="standard-basic" style={{ marginBottom: 10, width: '100%' }} label="Categoria" value={selectedCat} /> */}
+                   
+                    <FormControl>
+                    <InputLabel id="demo-simple-select-label">Categoria</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                    >
+    
+                        {categorias.map((u) => (
+
+
+                            <MenuItem onClick={() => {
+                                setSelected(u.categoria.name)
+                                setIdCat(u.categoria.id)
+                            }} value={u.id}>{u.categoria.name}</MenuItem>
+
+
+
+                        ))}
+                    </Select>
+                </FormControl>
+                    
+                    {/* {categorias.map((item) => (
                         <div onClick={() => {
                             setSelected(item.categoria.name)
                             setIdCat(item.categoria.id)
                         }}>
                             {item.categoria.name}
                         </div>
-                    ))}
+                    ))} */}
 
                     {/* <Dividenovo>
                             <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, width: '50%' }} label="Seu estado" />

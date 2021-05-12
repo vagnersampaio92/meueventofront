@@ -78,6 +78,7 @@ const MainPerfil = () => {
     console.log(respostafotos.data)
     carrega()
     window.location.reload();
+    
   };
 
 
@@ -297,7 +298,7 @@ const MainPerfil = () => {
           </Dividenovo>
 
           <p>Descreva seu serviço</p>
-          <TextField className="encolhe" id="outlined-basic" variant="outlined" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["descricao"]: e.target.value }) }} style={{ marginBottom: 10 }} defaultValue={dados[0].descricao} label="Descrição" />
+          <TextField className="encolhe" multiline id="outlined-basic" variant="outlined" onChange={e => { SetnovaVtrine({ ...novaVitrine, ["descricao"]: e.target.value }) }} style={{ marginBottom: 10 }} defaultValue={dados[0].descricao} label="Descrição" />
           <AlinhaBotao>
             <Buttonnew onClick={() => {Salvavitrine()}}>Salvar vitrine</Buttonnew >
           </AlinhaBotao>
