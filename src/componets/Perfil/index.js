@@ -10,6 +10,7 @@ import { uniqueId } from "lodash";
 import filesize from "filesize";
 import {SideBarContext} from '../../store/index'
 
+import Foto from './fotoVideo'
 // Carousel-buttonWrapper-62 Carousel-fullHeightHoverWrapper-63 Carousel-next-68
 
 
@@ -20,6 +21,11 @@ const MainPerfil = () => {
   const [perfilOption, SetperfilOption] = useState(
     1
   );
+
+  const [varVideo,setVarVideo] = useState(false)
+
+  const [lastScreen,SetLastScreen] = useState(1)
+
   const {subescolha, SetsubEscolha} = useContext( SideBarContext )
  
   const [dados, SetDados] = useState([]);
@@ -54,9 +60,10 @@ const MainPerfil = () => {
 
     }
   }, [dados]);
+
   useEffect(() => {
     if (dados.length > 0) {
-      SetvVtrine({ ...Vitrine, ["fotos"]: dados[0].fotos, ["videos"]: dados[0].videos })
+      SetvVtrine({ ["fotos"]: dados[0].fotos, ["videos"]: dados[0].videos })
     }
   }, [dados]);
 
@@ -80,7 +87,7 @@ const MainPerfil = () => {
     const respostafotos = await api.post('registerfotos', v)
     setResponseFotos(respostafotos)
     carrega()
-    // window.location.reload();
+    
   };
 
 
@@ -104,15 +111,16 @@ const MainPerfil = () => {
     const respostavideos = await api.post('registervideos', v)
     setResponseVideos(respostavideos)
     carrega()
-    window.location.reload();
   };
 
 
 
   const carrega = async () => {
+    setVarVideo(false)
     const id = sessionStorage.getItem('fornecedorid')
     const resposta = await api.get('listavitrine/' + id)
     await SetDados(resposta.data)
+    setVarVideo(true)
   }
   const SalvaPerfil = async () => {
     let data={}
@@ -160,13 +168,11 @@ const MainPerfil = () => {
   }
 
 
-
   const deletafoto = async (id) => {
     
     const resposta = await api.delete('excluifotos/'+id)
     // const remove = Vitrine.fotos.filter(vi => vi.id != id)
     // SetvVtrine({...Vitrine, ["fotos"]:[... remove]} )
-    window.location.reload();
   }
 
   const deletavideo = async (id) => {
@@ -228,50 +234,29 @@ const MainPerfil = () => {
           
           </Dividenovo>
           {subescolha == 1 &&
-            <div style={{ width: '100%' }}>
-              {console.log(dados)}
-              <Carousel animation="slide" autoPlay={false}  timeout="0">
-                {
-                  Vitrine.fotos.map((foto) => (
-                    <>
-                      <Imgslide style={{ marginTop: 50 }} src={foto.fotos} ></Imgslide >
-                      <AlinhaBotaoExcluir>
-                      
-                        <Buttonnew2 onClick={() => deletafoto(foto.id)}>Excluir foto</Buttonnew2>
-                      </AlinhaBotaoExcluir>
-                    </>
-                  ))
-                }
-              </Carousel>
-              <input name="file" type="file" accept="image/*" id="file" onChange={e => { sendPictureToserve(e.target.files) }}></input>
-                       <label for="file" className="button">Adicionar foto</label>
-              <Alinhacont>
-                {Vitrine.fotos.length} Fotos
-        </Alinhacont>
-
-             
-              {/* <Input type="file" onChange={e => { Setfile({...file, ["file"]:e.target.value}) }}></Input> */}
-            </div>
+            <Foto Vitrine={Vitrine} fun_update={SetperfilOption}/>
           }
 
           {subescolha == 2 &&
             <div style={{ width: '100%' }}>
+              {varVideo &&
               <Carousel  animation="slide" autoPlay={false}  timeout="0">
-                {
-                  Vitrine.videos.map((video) => (
-                    <>
-                      <iframe tyle={{ marginTop: 50 }} src={video.videos} ></iframe  >
-                      <AlinhaBotaoExcluir>
-                     
-                      <Buttonnew2 onClick={() => deletavideo(video.id)}>Excluir video</Buttonnew2>
-                      </AlinhaBotaoExcluir>
-                      {/* <AlinhaBotaoExcluir>
-                        <Buttonnew onClick={() => this.buscar()}>Excluir video</Buttonnew >
-                      </AlinhaBotaoExcluir> */}
-                    </>
-                  ))
-                }
-              </Carousel>
+              {
+                Vitrine.videos.map((video) => (
+                  <>
+                    <iframe tyle={{ marginTop: 50 }} src={video.videos} ></iframe  >
+                    <AlinhaBotaoExcluir>
+                   
+                    <Buttonnew2 onClick={() => deletavideo(video.id)}>Excluir video</Buttonnew2>
+                    </AlinhaBotaoExcluir>
+                    {/* <AlinhaBotaoExcluir>
+                      <Buttonnew onClick={() => this.buscar()}>Excluir video</Buttonnew >
+                    </AlinhaBotaoExcluir> */}
+                  </>
+                ))
+              }
+            </Carousel>
+              }
               <input name="file" type="file"  id="file" onChange={e => { sendVideosToserve(e.target.files) }}></input>
               <label for="file" className="button">Adicionar video</label>
               <Alinhacont>
