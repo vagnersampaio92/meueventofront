@@ -50,6 +50,11 @@ button{
     border-radius: 15px;
     color: #FF522C;
     cursor: pointer;
+
+    &:hover{
+        background: #FF522c;
+        color: white;
+    }
 }
 
 `;
@@ -125,6 +130,13 @@ margin-left:30px;
     margin-right:6px;
     font-size: 13px;
     text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+
+    &:hover{
+        color: #FF522c;
+        background: white;
+        border: 1px solid #FF522c;
+    }
+
  }
 .MuiInputBase-root{
 
@@ -143,6 +155,11 @@ button{
     border-radius: 15px;
     color: #FF522C;
     cursor: pointer;
+
+    &:hover{
+        background: #FF522c;
+        color: white;
+    }
 }
 
 `;

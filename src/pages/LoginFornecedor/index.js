@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import { Container, Img, Card, Card2, Buttonnew } from './style.js';
 import logo from '../../assets/logo.png'
 import TextField from '@material-ui/core/TextField'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
+
 
 import api from '../../services/api'
 
@@ -17,7 +20,8 @@ export default class Login extends Component {
         this.state = {
             email: '',
             Password: ' ',
-            erro: false
+            erro: false,
+            loggin: false
         }
         this.baseState = this.state
     }
@@ -43,7 +47,19 @@ export default class Login extends Component {
 
                             <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} style={{ marginBottom: 10, }} label="Email" />
                             <TextField id="standard-basic" onChange={e => { this.setState({ Password: e.target.value }) }} label="Senha" style={{ marginBottom: 10 }} type="password" />
+                            <div style={{display: 'flex',flexDirection: 'row'}}>
                             <Buttonnew  variant="outlined" style={{ marginBottom: 5, borderColor: "#fa8e40", marginTop: 10 }} onClick={() => this.buscar()}>Confirmar</Buttonnew >
+                            {this.state.loggin && 
+                                <Loader
+                                type="Oval"
+                                color="#FF522C"
+                                height={40}
+                                width={40}
+                                style={{marginLeft: 20}}
+                            />
+                            }
+                            </div>
+                            
                         </Card2>
 
                     </Card>
@@ -62,6 +78,7 @@ export default class Login extends Component {
 
 
         this.setState(this.baseState)
+        this.setState({loggin:true})
         // this.props.comentar(this.state.imos);
         // this.setState({imos});
 
@@ -76,6 +93,7 @@ export default class Login extends Component {
             const response = await api.post('loginapp', data)
         //   console.log(response)
             if (response.data.token) {
+                this.setState({loggin:false})
                 const a = response.data.token
                 const id = response.data.usuario.id
                 sessionStorage.setItem('tokenres', a);
@@ -85,7 +103,7 @@ export default class Login extends Component {
                 // console.log(b)
                 this.props.history.push("/fornecedor");
             } else {
-
+                this.setState({loggin:false})
                 this.setState(
                     {
                         erro: true

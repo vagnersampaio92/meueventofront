@@ -69,6 +69,11 @@ button{
     border-radius: 15px;
     color: #FF522C;
     cursor: pointer;
+
+    &:hover{
+        color: #FF522c;
+        background: white;
+    }
 }
 
 `;
@@ -135,6 +140,11 @@ button{
     border-radius: 15px;
     color: #FF522C;
     cursor: pointer;
+
+    &:hover{
+        background: #FF522c;
+        color: white;
+    }
 }
 
 `;
@@ -162,6 +172,13 @@ p{
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #666666;
     text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+button{
+    &:hover{
+        background: #FF522c;
+        color: white;
+    }
 }
 
 `;

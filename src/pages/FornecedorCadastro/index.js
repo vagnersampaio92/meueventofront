@@ -17,6 +17,9 @@ import { Link, withRouter } from "react-router-dom";
 import Checkbox from '@material-ui/core/Checkbox';
 import { thisExpression } from '@babel/types';
 
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
+
 
 
 export default function Login() {
@@ -31,6 +34,7 @@ export default function Login() {
     const [selectedCat, setSelected] = useState('')
     const [idCat, setIdCat] = useState(0)
     const [confirmpassword, setConfirmpassword] = useState('')
+    const [loader,setLoader] = useState(false)
     const [flag, setFlag] = useState(0)
     const [serverFoto,setServerFoto] = useState('https://img.icons8.com/pastel-glyph/2x/person-male.png')
 
@@ -57,7 +61,7 @@ export default function Login() {
                     <div style={{display:"flex",flexDirection:"column",width:"100%",alignItems:"center"}}>
                     <Imgslide src={serverFoto} />
                     <input name="file" type="file" accept="image/*" id="file" onChange={e => { sendPictureToserve(e.target.files) }}></input>
-                    <label for="file" className="button">Adicionar foto</label>
+                    <Buttonnew><label style={{cursor: 'pointer'}} for="file" className="button">Adicionar foto</label></Buttonnew>
                     </div>
                     <TextField id="standard-basic" onChange={e => { setName(e.target.value) }} style={{ marginBottom: 10, width: '100%' }} label="Nome completo" />
                     <TextField id="standard-basic" onChange={e => { setEmail(e.target.value) }} style={{ marginBottom: 10, width: '100%' }} label="Email" />
@@ -108,6 +112,15 @@ export default function Login() {
                         <AlinhaBotao>
                             <Buttonnew onClick={() => cadastrar()}>Cadastrar</Buttonnew >
                         </AlinhaBotao>
+                        <div style={{width: '100%', display: 'flex',justifyContent: 'center', marginTop: 20}}>
+                        {loader &&
+                            <Loader
+                                type="Oval"
+                                color="#FF522C"
+                                height={50}
+                                width={50}/>
+                        }
+                        </div>
                     </Ajustaaltura>
 
                 </Cardright>
@@ -123,6 +136,7 @@ export default function Login() {
 
 
     async function cadastrar() {
+        setLoader(true)
         if (password == confirmpassword) {
             let data = {}
             data.name = name
@@ -147,6 +161,7 @@ export default function Login() {
                 ]
             }
             console.log(categoria)
+            setLoader(false)
             const responsecategoria = await api.post('registervitrinecategoria', categoria)
             window.location.replace("/loginfornecedor")
         }

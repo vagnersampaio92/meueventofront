@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import api from '../../services/api'
 import { Link, withRouter } from "react-router-dom";
+import Loader from "react-loader-spinner";
 
 
 
@@ -19,7 +20,8 @@ export default class Login extends Component {
         this.state = {
             email: '',
             Password: ' ',
-            erro: false
+            erro: false,
+            loggin: false
         }
         this.baseState = this.state
     }
@@ -69,8 +71,19 @@ export default class Login extends Component {
 
                     <TextField id="standard-basic" onChange={e => { this.setState({ email: e.target.value }) }} label="Email" />
 
-                <TextField id="standard-basic" onChange={e => { this.setState({ Password: e.target.value }) }} label="Senha" style={{ marginBottom: 30 }} type="password" />
+                        <TextField id="standard-basic" onChange={e => { this.setState({ Password: e.target.value }) }} label="Senha" style={{ marginBottom: 30 }} type="password" />
+                        <div style={{display: 'flex',flexDirection: 'row'}}>
                         <Buttonnew  variant="outlined" style={{ marginBottom: 5, borderColor: "#fa8e40", marginTop: 10 }} onClick={() => this.buscar()}>Confirmar</Buttonnew >
+                        {this.state.loggin && 
+                                <Loader
+                                type="Oval"
+                                color="#FF522C"
+                                height={40}
+                                width={40}
+                                style={{marginLeft: 20}}
+                            />
+                        }
+                        </div>
                     </Card2>
 
                 </Card>
@@ -83,9 +96,10 @@ export default class Login extends Component {
     }
     async  buscar() {
      
-
+        
 
         this.setState(this.baseState)
+        this.setState({loggin: true})
         // this.props.comentar(this.state.imos);
         // this.setState({imos});
 
@@ -107,10 +121,10 @@ export default class Login extends Component {
                 // localStorage.setItem('token',response.data.user.token)
                 const b = sessionStorage.getItem('token')
                 // console.log(b)
-             
+                this.setState({loggin: false})
                 this.props.history.push("/admin");
             } else {
-
+                this.setState({loggin: false})
                 this.setState(
                     {
                         erro: true

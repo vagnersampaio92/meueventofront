@@ -110,6 +110,26 @@ export const Dividenovo = styled.div`
   }
 }
 
+.button{
+    width:200px !important;
+    background:#FF522C;
+    color: white;
+    text-align:center;
+    cursor: pointer;
+    border-radius: 10px;
+    padding:2px 0 2px 0;
+    letter-spacing: 0.16px;
+    color: #FFFFFF;
+
+
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    &:hover{
+        background: white;
+        color: #FF522C;
+        border: 1px solid #FF522C;
+    }
+ }
+
 `;
 export const Buttonnew = styled.div`
   width:200px;
@@ -123,6 +143,11 @@ export const Buttonnew = styled.div`
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #FFFFFF;
     text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    &:hover{
+        background: white;
+        color: #FF522C;
+        border: 1px solid #FF522C;
+    }
 `;
 export const Cardright = styled.div`
     display:flex;

@@ -6,6 +6,8 @@ import GlobalStyle from './styles/global'
 import Routes from './routes/index'
 // import Routesentrega from'./routes/entrega'
 import SideProvider from './store/index'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 const Title = styled.h1` 
  color: red;
  font-size: 32px;

@@ -21,12 +21,19 @@ a{
 
 export const Buttonnew = styled.div`
     width:40%;
+    height: 25px;
     background:#FF522C;
     color: white;
     text-align:center;
     cursor: pointer;
     border-radius: 10px;
     padding:2px 0 2px 0;
+    
+    &:hover{
+        background: white;
+        color: #FF522C;
+        border: 1px solid #FF522C;
+    }
 `;
 
 

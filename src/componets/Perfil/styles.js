@@ -27,7 +27,7 @@ export const Divide = styled.div`
 export const Img = styled.img`
     width: 100%;
      max-width: 150px;
-     height: auto;
+     height: 130px;
      margin-bottom:20px;
       max-height: 150px;
       border-radius: 50%;
@@ -103,7 +103,13 @@ export const Containerexterno = styled.div`
     letter-spacing: 0.16px;
     color: #FFFFFF;
 
+
     text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    &:hover{
+        background: white;
+        color: #FF522C;
+        border: 1px solid #FF522C;
+    }
  }
   #file{
     
@@ -153,6 +159,11 @@ export const Buttonnew2 = styled.div`
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #FF522C;
     text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+
+    &:hover{
+        background: #FF522C;
+        color: white;
+    }
 `;
 
 
@@ -168,6 +179,11 @@ export const Buttonnew = styled.div`
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #FFFFFF;
     text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    &:hover{
+        background: white;
+        color: #FF522C;
+        border: 1px solid #FF522C;
+    }
 `;
 export const Titulo = styled.div`
   font-style: normal;

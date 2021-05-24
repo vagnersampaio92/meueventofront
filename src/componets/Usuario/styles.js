@@ -45,6 +45,11 @@ button{
     border-radius: 15px;
     color: #FF522C;
     cursor: pointer;
+
+    &:hover{
+        background: #FF522C;
+        color: white;
+    }
 }
 
 `;
@@ -89,6 +94,12 @@ button{
     color: #ffffff;
     cursor: pointer;
     border:none;
+
+    &:hover{
+        background: white;
+        color: #FF522c;
+        border: 1px solid #FF522c;
+    }
 }
 
 `;
@@ -114,6 +125,11 @@ button{
     border-radius: 15px;
     color: #FF522C;
     cursor: pointer;
+
+    &:hover{
+        background: #FF522C;
+        color: white;
+    }
 }
 
 `;
